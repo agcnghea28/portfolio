@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-import ToolsMarquee from "./ToolsMarquee";
+import ToolsGrid from "./ToolsGrid";
 
 const projects = [
   {
@@ -130,7 +130,7 @@ export default function Home() {
             <h2 className="section-title">Tools I work with</h2>
           </Reveal>
         </div>
-        <ToolsMarquee />
+        <ToolsGrid />
       </section>
 
       <section className="section" id="projects">

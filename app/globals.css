@@ -31,6 +31,102 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.page {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+}
+
+.page > :not(.page-atmosphere) {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Full-page atmosphere: one continuous wash --- */
+.page-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  contain: layout style paint;
+  --mx: 50%;
+  --my: 50%;
+}
+
+.page-atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 14%,
+    rgba(201, 182, 242, 0.03) 24%,
+    rgba(235, 215, 248, 0.06) 38%,
+    rgba(246, 198, 216, 0.09) 52%,
+    rgba(252, 227, 138, 0.07) 72%,
+    rgba(201, 182, 242, 0.05) 100%
+  );
+}
+
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor.is-on {
+  opacity: 1;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  background: var(--ink);
+  transition: background 0.2s ease;
+}
+
+.cursor-ring {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 1.5px solid var(--violet);
+  background: transparent;
+  transition:
+    width 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
+    height 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
+    margin 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.cursor.is-hover .cursor-ring {
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  background: rgba(109, 79, 196, 0.08);
+  border-color: var(--violet);
+}
+
 a {
   color: inherit;
 }
@@ -189,7 +285,7 @@ a {
 
 /* --- Hero --- */
 .hero {
-  padding: 72px 0 64px;
+  padding: 72px 0 80px;
 }
 
 .hero-grid {
@@ -465,17 +561,149 @@ a {
   margin: 0;
 }
 
-/* --- Tools: dual infinite marquee --- */
+/* --- Full-page atmosphere (continued) --- */
+
+.page-gradient {
+  position: absolute;
+  inset: -45%;
+  background:
+    radial-gradient(circle at 28% 32%, rgba(201, 182, 242, 0.22), transparent 52%),
+    radial-gradient(circle at 72% 48%, rgba(246, 198, 216, 0.18), transparent 50%),
+    radial-gradient(circle at 38% 78%, rgba(252, 227, 138, 0.14), transparent 48%);
+  animation: gradient-pan 38s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.page-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(96px);
+  will-change: transform;
+}
+
+.page-orb-a {
+  width: min(85vw, 920px);
+  height: min(85vw, 920px);
+  background: rgba(201, 182, 242, 0.22);
+  top: 18%;
+  left: -18%;
+  animation: orb-drift-a 34s ease-in-out infinite;
+}
+
+.page-orb-b {
+  width: min(72vw, 780px);
+  height: min(72vw, 780px);
+  background: rgba(246, 198, 216, 0.2);
+  top: 48%;
+  right: -20%;
+  animation: orb-drift-b 42s ease-in-out infinite;
+  animation-delay: -14s;
+}
+
+.page-orb-c {
+  width: min(78vw, 840px);
+  height: min(78vw, 840px);
+  background: rgba(252, 227, 138, 0.16);
+  top: 76%;
+  left: -6%;
+  animation: orb-drift-c 48s ease-in-out infinite;
+  animation-delay: -24s;
+}
+
+.page-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+    520px circle at var(--mx) var(--my),
+    rgba(201, 182, 242, 0.18),
+    transparent 62%
+  );
+  transition: opacity 0.4s ease;
+}
+
+.page-atmosphere.is-lit .page-glow {
+  opacity: 1;
+}
+
+.page-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(23, 20, 31, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+  mask-image: linear-gradient(180deg, transparent 0%, transparent 16%, #000 30%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 16%, #000 30%);
+}
+
+@keyframes gradient-pan {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-5%, 3%) scale(1.04); }
+}
+
+@keyframes orb-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, 4%) scale(1.05); }
+}
+
+@keyframes orb-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-4%, 6%) scale(1.04); }
+}
+
+@keyframes orb-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3%, -4%) scale(1.03); }
+}
+
+/* --- Tools: category filters + dual marquee --- */
 .tools-section {
   overflow: hidden;
-  padding-bottom: 72px;
+}
+
+.tool-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+
+.tool-filter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tool-filter:hover {
+  transform: translateY(-1px);
+}
+
+.tool-filter.is-active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.tool-filter:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 2px;
 }
 
 .tool-marquee-wrap {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 4px;
+  margin-top: 18px;
   mask-image: linear-gradient(
     90deg,
     transparent 0%,
@@ -588,10 +816,6 @@ a {
   height: 36px;
   object-fit: contain;
   display: block;
-  opacity: 0;
-}
-
-.tool-pill-icon-img.is-loaded {
   opacity: 1;
 }
 
@@ -723,9 +947,10 @@ a {
 
 /* --- Contact --- */
 .contact-frame {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.86);
   padding: 48px 44px;
   text-align: center;
+  backdrop-filter: blur(8px);
 }
 
 .contact-title {
@@ -748,6 +973,7 @@ a {
 }
 
 .footer {
+  position: relative;
   padding: 32px 0 48px;
   text-align: center;
   font-family: var(--font-mono);
@@ -764,15 +990,23 @@ a {
   .tool-track,
   .tool-pill,
   .tool-pill-icon,
+  .tool-filter,
   .skill-item,
   .btn,
   .hero-card,
   .hero-card-photo,
-  .hero-card-tag {
+  .hero-card-tag,
+  .page-gradient,
+  .page-orb {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .page-glow,
+  .page-atmosphere.is-lit .page-glow {
+    opacity: 0 !important;
   }
 
   .tool-marquee-wrap {
@@ -825,6 +1059,11 @@ a {
   .hero-card-tag-right {
     right: 0;
     top: 22px;
+  }
+
+  .tool-filter {
+    font-size: 13px;
+    padding: 9px 14px;
   }
 
   .tool-pill {

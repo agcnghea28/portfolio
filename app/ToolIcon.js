@@ -37,32 +37,61 @@ function Badge({ name }) {
   );
 }
 
-export default function ToolIcon({ slug, name, href }) {
-  const [stage, setStage] = useState(slug ? "icon" : "fallback");
-  const [loaded, setLoaded] = useState(false);
+function ToolImage({ src, onError }) {
+  return (
+    <img
+      className="tool-pill-icon-img"
+      src={src}
+      alt=""
+      width={36}
+      height={36}
+      loading="lazy"
+      decoding="async"
+      referrerPolicy="no-referrer"
+      onError={onError}
+    />
+  );
+}
 
-  if (stage === "icon") {
+export default function ToolIcon({ slug, name, href }) {
+  const [source, setSource] = useState(() => {
+    if (badges[name]) return "badge";
+    if (slug) return "cdn";
+    return "favicon";
+  });
+  const [cdnIndex, setCdnIndex] = useState(0);
+
+  const cdnUrls = slug
+    ? [
+        `https://cdn.simpleicons.org/${slug}`,
+        `https://cdn.jsdelivr.net/npm/simple-icons@14/icons/${slug}.svg`,
+      ]
+    : [];
+
+  if (source === "badge") {
+    return <Badge name={name} />;
+  }
+
+  if (source === "cdn" && cdnUrls[cdnIndex]) {
     return (
-      <img
-        className={`tool-pill-icon-img${loaded ? " is-loaded" : ""}`}
-        src={`https://cdn.simpleicons.org/${slug}`}
-        alt=""
-        width={36}
-        height={36}
-        loading="lazy"
-        decoding="async"
-        referrerPolicy="no-referrer"
-        onLoad={() => setLoaded(true)}
-        onError={() => setStage("fallback")}
+      <ToolImage
+        src={cdnUrls[cdnIndex]}
+        onError={() => {
+          if (cdnIndex + 1 < cdnUrls.length) {
+            setCdnIndex((index) => index + 1);
+            return;
+          }
+          if (badges[name]) {
+            setSource("badge");
+            return;
+          }
+          setSource("favicon");
+        }}
       />
     );
   }
 
-  if (badges[name]) {
-    return <Badge name={name} />;
-  }
-
-  if (stage === "fallback" && href) {
+  if (source === "favicon" && href) {
     let domain = "";
     try {
       domain = new URL(href).hostname;
@@ -72,17 +101,9 @@ export default function ToolIcon({ slug, name, href }) {
 
     if (domain) {
       return (
-        <img
-          className={`tool-pill-icon-img${loaded ? " is-loaded" : ""}`}
+        <ToolImage
           src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`}
-          alt=""
-          width={36}
-          height={36}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
-          onLoad={() => setLoaded(true)}
-          onError={() => setStage("mono")}
+          onError={() => setSource("mono")}
         />
       );
     }

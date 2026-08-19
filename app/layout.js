@@ -1,4 +1,6 @@
 import "./globals.css";
+import CustomCursor from "./CustomCursor";
+import PageAtmosphere from "./PageAtmosphere";
 
 export const metadata = {
   title: "Ghea J. Agcang — UI/UX Designer & Web Developer",
@@ -21,7 +23,13 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <CustomCursor />
+        <div className="page">
+          <PageAtmosphere />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
