@@ -203,12 +203,36 @@ a {
   min-width: 0;
 }
 
+.hero-visual {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  padding: 10px 36px 6px;
+  margin: -10px -36px -6px;
+}
+
 .hero-card {
+  position: relative;
+  z-index: 1;
   background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 14px 30px -18px rgba(23, 20, 31, 0.2);
+  border: 2px solid var(--ink);
+  border-radius: 24px;
+  padding: 18px 18px 22px;
+  overflow: visible;
+  box-shadow:
+    0 1px 0 rgba(23, 20, 31, 0.04),
+    0 10px 24px -12px rgba(23, 20, 31, 0.22),
+    0 28px 56px -24px rgba(23, 20, 31, 0.28);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.4s ease;
+}
+
+.hero-visual:hover .hero-card {
+  transform: translateY(-8px);
+  box-shadow:
+    0 12px 28px -10px rgba(109, 79, 196, 0.22),
+    0 36px 64px -20px rgba(23, 20, 31, 0.32);
 }
 
 .hero-card-photo-wrap {
@@ -216,39 +240,85 @@ a {
   margin-bottom: 18px;
 }
 
+.hero-card-photo-inner {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+}
+
 .hero-card-photo {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: var(--radius);
   display: block;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-visual:hover .hero-card-photo {
+  transform: scale(1.06);
 }
 
 .hero-card-tag {
   position: absolute;
+  z-index: 3;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.15;
+  color: var(--ink);
   background: var(--white);
-  border: 1px solid var(--line);
+  border: 2px solid var(--ink);
   border-radius: 999px;
-  padding: 8px 14px;
-  box-shadow: 0 6px 16px -6px rgba(23, 20, 31, 0.15);
+  padding: 11px 18px;
+  box-shadow:
+    4px 5px 0 0 rgba(23, 20, 31, 0.12),
+    0 14px 28px -10px rgba(23, 20, 31, 0.28);
   white-space: nowrap;
+  cursor: default;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.35s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .hero-card-tag-left {
-  bottom: 20px;
-  left: -6px;
+  left: 4px;
+  top: 58%;
+  transform: rotate(-8deg);
 }
 
 .hero-card-tag-right {
-  top: 16px;
-  right: -6px;
-  font-size: 12px;
-  padding: 7px 12px;
+  right: 4px;
+  top: 28px;
+  transform: rotate(7deg);
+}
+
+.hero-visual:hover .hero-card-tag-left {
+  transform: translateY(-6px) rotate(-10deg);
+}
+
+.hero-visual:hover .hero-card-tag-right {
+  transform: translateY(-6px) rotate(9deg);
+}
+
+.hero-card-tag:hover {
+  background: var(--lavender);
+  border-color: var(--ink);
+  box-shadow:
+    5px 7px 0 0 rgba(109, 79, 196, 0.22),
+    0 18px 32px -10px rgba(23, 20, 31, 0.28);
+}
+
+.hero-card-tag-left:hover,
+.hero-visual:hover .hero-card-tag-left:hover {
+  transform: translateY(-8px) rotate(-8deg) scale(1.06);
+}
+
+.hero-card-tag-right:hover,
+.hero-visual:hover .hero-card-tag-right:hover {
+  transform: translateY(-8px) rotate(7deg) scale(1.06);
 }
 
 .hero-card-body {
@@ -571,11 +641,22 @@ a {
   .project-card,
   .tool-card,
   .skill-item,
-  .btn {
+  .btn,
+  .hero-card,
+  .hero-card-photo,
+  .hero-card-tag {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .hero-card-tag-left {
+    transform: rotate(-8deg) !important;
+  }
+
+  .hero-card-tag-right {
+    transform: rotate(7deg) !important;
   }
 }
 
@@ -585,9 +666,28 @@ a {
     gap: 36px;
   }
 
-  .hero-card {
+  .hero-visual {
     max-width: 420px;
     margin: 0 auto;
+    padding: 8px 22px 4px;
+  }
+
+  .hero-card {
+    padding: 16px 16px 20px;
+  }
+
+  .hero-card-tag {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+
+  .hero-card-tag-left {
+    left: 0;
+  }
+
+  .hero-card-tag-right {
+    right: 0;
+    top: 22px;
   }
 }
 

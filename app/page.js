@@ -142,34 +142,38 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="hero-card hero-item" style={{ "--d": "0.15s" }}>
-              <div className="hero-card-photo-wrap">
-                <Image
-                  className="hero-card-photo"
-                  src="/ghea-avatar.png"
-                  alt="Ghea Agcang"
-                  width={400}
-                  height={320}
-                />
-                <span className="hero-card-tag hero-card-tag-left">UI/UX Designer</span>
-                <span className="hero-card-tag hero-card-tag-right">Website Developer</span>
-              </div>
-              <div className="hero-card-body">
-                <p className="hero-card-name">Ghea Agcang</p>
-                <p className="hero-card-location">
-                  <svg className="hero-card-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z" fill="currentColor" />
-                  </svg>
-                  Philippines
-                </p>
-                <p className="hero-card-comment">
-                  <svg className="hero-card-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor" />
-                  </svg>
-                  Thank you so much for showing interest and for viewing my portfolio!
-                </p>
-              </div>
-            </aside>
+            <div className="hero-visual hero-item" style={{ "--d": "0.15s" }}>
+              <aside className="hero-card">
+                <div className="hero-card-photo-wrap">
+                  <div className="hero-card-photo-inner">
+                    <Image
+                      className="hero-card-photo"
+                      src="/ghea-avatar.png"
+                      alt="Ghea Agcang"
+                      width={400}
+                      height={320}
+                    />
+                  </div>
+                </div>
+                <div className="hero-card-body">
+                  <p className="hero-card-name">Ghea Agcang</p>
+                  <p className="hero-card-location">
+                    <svg className="hero-card-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z" fill="currentColor" />
+                    </svg>
+                    Philippines
+                  </p>
+                  <p className="hero-card-comment">
+                    <svg className="hero-card-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor" />
+                    </svg>
+                    Thank you so much for showing interest and for viewing my portfolio!
+                  </p>
+                </div>
+              </aside>
+              <span className="hero-card-tag hero-card-tag-left">UI/UX Designer</span>
+              <span className="hero-card-tag hero-card-tag-right">Website Developer</span>
+            </div>
           </div>
         </div>
       </header>
