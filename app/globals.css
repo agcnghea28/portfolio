@@ -37,7 +37,7 @@ body {
   z-index: 1;
 }
 
-.page > :not(.page-atmosphere) {
+.page > :not(.page-atmosphere):not(.nav) {
   position: relative;
   z-index: 1;
 }
@@ -191,6 +191,7 @@ a {
 .frame .handle-tr { right: -4px; }
 
 /* --- Nav: floating pill bar --- */
+.page > .nav,
 .nav {
   position: sticky;
   top: 0;
