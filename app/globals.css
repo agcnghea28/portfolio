@@ -858,6 +858,158 @@ a {
   line-height: 1.2;
 }
 
+/* --- Design process --- */
+.process-lede {
+  max-width: 46ch;
+  margin: -8px 0 28px;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.process-stage {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: 32px;
+  align-items: center;
+  min-height: 220px;
+  margin-bottom: 36px;
+  animation: process-in 0.35s ease;
+}
+
+@keyframes process-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.process-visual {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  max-width: 220px;
+  border-radius: 22px;
+  background:
+    linear-gradient(160deg, var(--lavender) 0%, var(--pink) 55%, var(--yellow) 100%);
+}
+
+.process-visual-mark {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.process-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.process-title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.process-desc {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.process-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0 2px;
+}
+
+.process-track-line,
+.process-track-progress {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 50%;
+  height: 1.5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.process-track-line {
+  background: var(--line);
+}
+
+.process-track-progress {
+  right: auto;
+  width: 0;
+  background: var(--ink);
+  transition: width 0.35s ease;
+}
+
+.process-dot {
+  position: relative;
+  z-index: 1;
+  min-width: 44px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.process-dot:hover,
+.process-dot.is-active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.process-dot:hover {
+  transform: translateY(-1px);
+}
+
+.process-dot:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
+
 /* --- Projects: sticky-note style cards --- */
 .project-grid {
   display: grid;
@@ -1152,6 +1304,9 @@ a {
   .tool-filter,
   .skill-nav-item,
   .skill-board,
+  .process-stage,
+  .process-dot,
+  .process-track-progress,
   .btn,
   .hero-card,
   .hero-card-photo,
@@ -1243,6 +1398,28 @@ a {
     min-height: 0;
     padding: 24px 22px 22px;
     border-radius: 20px;
+  }
+
+  .process-stage {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+    margin-bottom: 28px;
+  }
+
+  .process-visual {
+    max-width: 120px;
+    border-radius: 16px;
+  }
+
+  .process-visual-mark {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .process-title {
+    font-size: 26px;
   }
 
   .tool-pill {

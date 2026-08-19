@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProcessSection from "./ProcessSection";
 import Reveal from "./Reveal";
 import SkillsAccordion from "./SkillsAccordion";
 import ToolsGrid from "./ToolsGrid";
@@ -39,6 +40,7 @@ export default function Home() {
             <ul className="nav-links nav-links-left">
               <li><a href="https://portfolio-ghea.vercel.app/">Home</a></li>
               <li><a href="#tools">Tools</a></li>
+              <li><a href="#process">Process</a></li>
               <li><a href="#projects">Projects</a></li>
             </ul>
             <a className="nav-brand" href="https://portfolio-ghea.vercel.app/">
@@ -125,10 +127,22 @@ export default function Home() {
         <ToolsGrid />
       </section>
 
-      <section className="section" id="projects">
+      <section className="section" id="process">
         <div className="wrap">
           <Reveal className="section-head">
             <span className="tag">02</span>
+            <h2 className="section-title">Design process</h2>
+          </Reveal>
+          <Reveal>
+            <ProcessSection />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" id="projects">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <span className="tag">03</span>
             <h2 className="section-title">Projects</h2>
           </Reveal>
           <div className="project-grid">
@@ -151,7 +165,7 @@ export default function Home() {
       <section className="section" id="skills">
         <div className="wrap">
           <Reveal className="section-head">
-            <span className="tag">03</span>
+            <span className="tag">04</span>
             <h2 className="section-title">Skills</h2>
           </Reveal>
           <Reveal>
