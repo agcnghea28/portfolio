@@ -686,13 +686,14 @@ a {
     transform 0.2s ease;
 }
 
-.tool-filter:hover {
-  transform: translateY(-1px);
-}
-
+.tool-filter:hover,
 .tool-filter.is-active {
   background: var(--ink);
   color: var(--white);
+}
+
+.tool-filter:hover {
+  transform: translateY(-1px);
 }
 
 .tool-filter:focus-visible {
