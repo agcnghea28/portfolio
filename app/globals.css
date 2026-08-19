@@ -915,36 +915,193 @@ a {
   color: var(--ink-soft);
 }
 
-/* --- Skills --- */
-.skill-grid {
+/* --- Skills stage --- */
+.skill-stage {
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: minmax(240px, 0.95fr) minmax(280px, 1.15fr);
+  gap: 40px;
+  align-items: stretch;
 }
 
-.skill-item {
+.skill-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-nav-item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 8px 18px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.skill-nav-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.skill-nav-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 3px;
+  border-radius: 99px;
+  background: var(--ink);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.28s ease;
+}
+
+.skill-nav-item.is-active,
+.skill-nav-item:hover {
+  color: var(--ink);
+}
+
+.skill-nav-item.is-active::before {
+  transform: scaleY(1);
+}
+
+.skill-nav-item:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
+
+.skill-index {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: inherit;
+  opacity: 0.72;
+}
+
+.skill-title {
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  transition: font-weight 0.2s ease;
+}
+
+.skill-nav-item.is-active .skill-title {
+  font-weight: 600;
+}
+
+.skill-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 360px;
+  padding: 32px 32px 28px;
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 24px;
+  animation: skill-board-in 0.35s ease;
 }
 
-.skill-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px -18px rgba(23, 20, 31, 0.3);
+@keyframes skill-board-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.skill-item h3 {
+.skill-board-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.skill-board-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.skill-board-title {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.skill-summary {
+  margin: 0 0 14px;
   font-size: 15px;
-  margin: 0 0 6px;
+  line-height: 1.55;
+  color: var(--ink);
 }
 
-.skill-item p {
-  font-size: 13px;
+.skill-practice {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin: 0;
-  line-height: 1.5;
+}
+
+.skill-practice li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 8px;
+}
+
+.skill-practice li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--violet);
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.skill-chip:hover {
+  background: var(--ink);
+  color: var(--white);
 }
 
 /* --- Contact --- */
@@ -993,7 +1150,8 @@ a {
   .tool-pill,
   .tool-pill-icon,
   .tool-filter,
-  .skill-item,
+  .skill-nav-item,
+  .skill-board,
   .btn,
   .hero-card,
   .hero-card-photo,
@@ -1066,6 +1224,25 @@ a {
   .tool-filter {
     font-size: 13px;
     padding: 9px 14px;
+  }
+
+  .skill-stage {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-nav-item {
+    padding: 14px 6px 14px 14px;
+  }
+
+  .skill-title {
+    font-size: 18px;
+  }
+
+  .skill-board {
+    min-height: 0;
+    padding: 24px 22px 22px;
+    border-radius: 20px;
   }
 
   .tool-pill {

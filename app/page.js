@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import SkillsAccordion from "./SkillsAccordion";
 import ToolsGrid from "./ToolsGrid";
 
 const projects = [
@@ -27,15 +28,6 @@ const projects = [
     color: "var(--lavender)",
     status: "Case study · coming soon",
   },
-];
-
-const skills = [
-  { name: "UX Research", desc: "User interviews, journey mapping, usability testing." },
-  { name: "Wireframing & Prototyping", desc: "Low to high-fidelity flows in Figma and Balsamiq." },
-  { name: "Visual & UI Design", desc: "Design systems, typography, and component libraries." },
-  { name: "Frontend Development", desc: "HTML, CSS, JavaScript, and React/Next.js builds." },
-  { name: "CMS & Website Builds", desc: "WordPress, Elementor, and Divi-based site delivery." },
-  { name: "AI-assisted Workflows", desc: "Using Claude, ChatGPT, and Cursor to speed up design-to-code." },
 ];
 
 export default function Home() {
@@ -162,18 +154,9 @@ export default function Home() {
             <span className="tag">03</span>
             <h2 className="section-title">Skills</h2>
           </Reveal>
-          <div className="skill-grid">
-            {skills.map((s, i) => (
-              <Reveal
-                key={s.name}
-                className="skill-item"
-                style={{ transitionDelay: `${i * 70}ms` }}
-              >
-                <h3>{s.name}</h3>
-                <p>{s.desc}</p>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <SkillsAccordion />
+          </Reveal>
         </div>
       </section>
 
