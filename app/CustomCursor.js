@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const hoverSelector = "a, button, [role='tab'], .btn, .tool-pill, .nav-brand";
+const hoverSelector = "a, button, [role='tab'], .btn, .tool-pill, .nav-brand, .project-card";
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);

@@ -2,36 +2,10 @@ import AboutSection from "./AboutSection";
 import Image from "next/image";
 import HeroSection from "./HeroSection";
 import ProcessSection from "./ProcessSection";
+import ProjectsSection from "./ProjectsSection";
 import Reveal from "./Reveal";
 import SkillsAccordion from "./SkillsAccordion";
 import ToolsGrid from "./ToolsGrid";
-
-const projects = [
-  {
-    name: "Project One",
-    desc: "Placeholder case study — a UX redesign focused on simplifying a multi-step booking flow.",
-    color: "var(--lavender)",
-    status: "Case study · coming soon",
-  },
-  {
-    name: "Project Two",
-    desc: "Placeholder case study — a marketing site built and launched end-to-end on WordPress.",
-    color: "var(--pink)",
-    status: "Case study · coming soon",
-  },
-  {
-    name: "Project Three",
-    desc: "Placeholder case study — a design system built in Figma and handed off for development.",
-    color: "var(--yellow)",
-    status: "Case study · coming soon",
-  },
-  {
-    name: "Project Four",
-    desc: "Placeholder case study — a small business site rebuilt on Next.js and deployed on Vercel.",
-    color: "var(--lavender)",
-    status: "Case study · coming soon",
-  },
-];
 
 export default function Home() {
   return (
@@ -103,20 +77,7 @@ export default function Home() {
             <span className="tag">04</span>
             <h2 className="section-title">Projects</h2>
           </Reveal>
-          <div className="project-grid">
-            {projects.map((p, i) => (
-              <Reveal
-                key={p.name}
-                className={`project-card project-card-${(i % 4) + 1}`}
-                style={{ transitionDelay: `${i * 90}ms` }}
-              >
-                <div className="project-swatch" style={{ background: p.color }} />
-                <h3>{p.name}</h3>
-                <p>{p.desc}</p>
-                <span className="project-status">{p.status}</span>
-              </Reveal>
-            ))}
-          </div>
+          <ProjectsSection />
         </div>
       </section>
 
