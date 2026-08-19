@@ -1,61 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-
-const toolGroups = [
-  {
-    label: "Design",
-    items: [
-      "Figma",
-      "Balsamiq",
-      "Google Stitch",
-      "Visily",
-      "Canva",
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Adobe Firefly",
-      "Midjourney",
-    ],
-  },
-  {
-    label: "Development",
-    items: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "WordPress",
-      "Elementor",
-      "Divi Builder",
-      "Payload",
-      "GitHub",
-      "Vercel",
-    ],
-  },
-  {
-    label: "AI & Automation",
-    items: [
-      "Claude (Code, Design, Cowork)",
-      "ChatGPT",
-      "Gemini",
-      "Cursor",
-      "Composio",
-      "Make.com",
-    ],
-  },
-  {
-    label: "Workflow & Ops",
-    items: [
-      "Asana",
-      "Notion",
-      "Trello",
-      "Mailchimp",
-      "Outlook",
-      "Microsoft Teams",
-      "Microsoft Loop",
-      "Microsoft Office",
-      "Google Workspace",
-    ],
-  },
-];
+import ToolsMarquee from "./ToolsMarquee";
 
 const projects = [
   {
@@ -178,29 +123,14 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="section" id="tools">
+      <section className="section tools-section" id="tools">
         <div className="wrap">
           <Reveal className="section-head">
             <span className="tag">01</span>
             <h2 className="section-title">Tools I work with</h2>
           </Reveal>
-          <div className="tool-groups">
-            {toolGroups.map((group, i) => (
-              <Reveal
-                key={group.label}
-                className="tool-card"
-                style={{ transitionDelay: `${i * 90}ms` }}
-              >
-                <h3>{group.label}</h3>
-                <ul className="tool-list">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
-          </div>
         </div>
+        <ToolsMarquee />
       </section>
 
       <section className="section" id="projects">
