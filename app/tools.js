@@ -37,6 +37,7 @@ export const tools = [
   { name: "Mailchimp", href: "https://mailchimp.com", slug: "mailchimp", category: "Workflow & Ops" },
   { name: "Outlook", href: "https://www.microsoft.com/microsoft-365/outlook", slug: "microsoftoutlook", category: "Workflow & Ops" },
   { name: "Teams", href: "https://www.microsoft.com/microsoft-teams", slug: "microsoftteams", category: "Workflow & Ops" },
+  { name: "Slack", href: "https://slack.com", slug: "slack", category: "Workflow & Ops" },
   { name: "Loop", href: "https://www.microsoft.com/microsoft-365/loop", slug: "microsoft", category: "Workflow & Ops" },
   { name: "Office", href: "https://www.microsoft.com/microsoft-365", slug: "microsoft365", category: "Workflow & Ops" },
   { name: "Google Workspace", href: "https://workspace.google.com", slug: "google", category: "Workflow & Ops" },
