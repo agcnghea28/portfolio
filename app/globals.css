@@ -132,9 +132,9 @@ a {
 }
 
 .wrap {
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(32px, 6vw, 72px);
 }
 
 /* --- Tag / annotation label, the signature motif borrowed from design-tool UI --- */
@@ -1927,7 +1927,7 @@ a {
   }
 
   .tool-track {
-    padding-inline: 24px;
+    padding-inline: clamp(32px, 6vw, 72px);
   }
 }
 
