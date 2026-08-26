@@ -231,9 +231,7 @@ export default function ProjectsSection() {
                         </button>
                       ))}
                     </div>
-                  ) : (
-                    <p className="project-modal-note">Placeholder screenshot — add more in projects.js</p>
-                  )}
+                  ) : null}
                 </div>
 
                 <div className="project-modal-body">
