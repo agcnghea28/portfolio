@@ -7,11 +7,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: [],
-    cover: "/projects/little-chinese-everywhere.svg",
+    cover: "/projects/little-chinese-everywhere.jpg",
     screenshots: [
       {
-        src: "/projects/little-chinese-everywhere.svg",
-        alt: "Placeholder screenshot — Little Chinese Everywhere",
+        src: "/projects/little-chinese-everywhere.jpg",
+        alt: "Little Chinese Everywhere — final project collage",
       },
     ],
     figmaUrl: "",
@@ -26,11 +26,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: [],
-    cover: "/projects/turbotender.svg",
+    cover: "/projects/turbotender.jpg",
     screenshots: [
       {
-        src: "/projects/turbotender.svg",
-        alt: "Placeholder screenshot — TurboTender",
+        src: "/projects/turbotender.jpg",
+        alt: "TurboTender — final project collage",
       },
     ],
     figmaUrl: "",
@@ -45,11 +45,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: [],
-    cover: "/projects/lrf.svg",
+    cover: "/projects/lrf.jpg",
     screenshots: [
       {
-        src: "/projects/lrf.svg",
-        alt: "Placeholder screenshot — LRF",
+        src: "/projects/lrf.jpg",
+        alt: "LRF — final project collage",
       },
     ],
     figmaUrl: "",
@@ -64,11 +64,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: [],
-    cover: "/projects/teamwear-factory.svg",
+    cover: "/projects/teamwear-factory.jpg",
     screenshots: [
       {
-        src: "/projects/teamwear-factory.svg",
-        alt: "Placeholder screenshot — Teamwear Factory",
+        src: "/projects/teamwear-factory.jpg",
+        alt: "Teamwear Factory — final project collage",
       },
     ],
     figmaUrl: "",
@@ -83,11 +83,11 @@ export const projects = [
     client: "Placeholder client",
     shared: true,
     tags: [],
-    cover: "/projects/p1peline.svg",
+    cover: "/projects/p1peline.jpg",
     screenshots: [
       {
-        src: "/projects/p1peline.svg",
-        alt: "Placeholder screenshot — P1peline",
+        src: "/projects/p1peline.jpg",
+        alt: "P1peline — final project collage",
       },
     ],
     figmaUrl: "",
@@ -102,11 +102,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: [],
-    cover: "/projects/the-move-better-project.svg",
+    cover: "/projects/the-move-better-project.jpg",
     screenshots: [
       {
-        src: "/projects/the-move-better-project.svg",
-        alt: "Placeholder screenshot — The Move Better Project",
+        src: "/projects/the-move-better-project.jpg",
+        alt: "The Move Better Project — final project collage",
       },
     ],
     figmaUrl: "",
@@ -121,11 +121,11 @@ export const projects = [
     client: "Placeholder client",
     shared: true,
     tags: [],
-    cover: "/projects/edgy-sport.svg",
+    cover: "/projects/edgy-sport.jpg",
     screenshots: [
       {
-        src: "/projects/edgy-sport.svg",
-        alt: "Placeholder screenshot — EDGY SPORT",
+        src: "/projects/edgy-sport.jpg",
+        alt: "EDGY SPORT — final project collage",
       },
     ],
     figmaUrl: "",
@@ -140,11 +140,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: ["Templates", "Pages"],
-    cover: "/projects/sphere-resources.svg",
+    cover: "/projects/sphere-resources.jpg",
     screenshots: [
       {
-        src: "/projects/sphere-resources.svg",
-        alt: "Placeholder screenshot — Sphere Resources",
+        src: "/projects/sphere-resources.jpg",
+        alt: "Sphere Resources — final project collage",
       },
     ],
     figmaUrl: "",
@@ -159,11 +159,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: ["Templates", "Pages"],
-    cover: "/projects/sphere-sport.svg",
+    cover: "/projects/sphere-sport.jpg",
     screenshots: [
       {
-        src: "/projects/sphere-sport.svg",
-        alt: "Placeholder screenshot — Sphere Sport",
+        src: "/projects/sphere-sport.jpg",
+        alt: "Sphere Sport — final project collage",
       },
     ],
     figmaUrl: "",
@@ -178,11 +178,11 @@ export const projects = [
     client: "Placeholder client",
     shared: false,
     tags: [],
-    cover: "/projects/huayun-luxury-trains.svg",
+    cover: "/projects/huayun-luxury-trains.jpg",
     screenshots: [
       {
-        src: "/projects/huayun-luxury-trains.svg",
-        alt: "Placeholder screenshot — Huayun Luxury Trains",
+        src: "/projects/huayun-luxury-trains.jpg",
+        alt: "Huayun Luxury Trains — final project collage",
       },
     ],
     figmaUrl: "",

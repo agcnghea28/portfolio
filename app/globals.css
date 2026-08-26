@@ -470,10 +470,10 @@ a {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   gap: 12px;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .about-title {
@@ -483,13 +483,13 @@ a {
   font-size: clamp(42px, 8vw, 88px);
   line-height: 0.95;
   letter-spacing: -0.06em;
-  text-align: center;
+  text-align: left;
 }
 
 .about-backdrop {
   position: absolute;
-  left: 50%;
-  top: 52%;
+  left: 58%;
+  top: 48%;
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(72px, 16vw, 180px);
@@ -512,10 +512,19 @@ a {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 400px) minmax(0, 1fr);
+  grid-template-columns: minmax(260px, 400px) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(12px, 2.5vw, 28px);
+  gap: clamp(28px, 4vw, 56px);
   min-height: 520px;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
 }
 
 .about-copy {
@@ -524,26 +533,15 @@ a {
   display: flex;
   flex-direction: column;
   gap: 28px;
-}
-
-.about-copy-left {
   text-align: left;
 }
 
-.about-copy-right {
-  text-align: right;
-}
-
-.reveal.is-visible .about-copy-left {
+.reveal.is-visible .about-visual {
   animation: about-slide-left 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.reveal.is-visible .about-copy-right {
+.reveal.is-visible .about-content {
   animation: about-slide-right 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-.about-copy-right .about-pills {
-  justify-content: flex-end;
 }
 
 .about-visual {
@@ -582,6 +580,7 @@ a {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 12px;
+  justify-content: flex-start;
 }
 
 @keyframes about-slide-left {
@@ -1890,8 +1889,7 @@ a {
   .about-pill,
   .about-visual,
   .about-approach-body,
-  .about-copy-left,
-  .about-copy-right,
+  .about-content,
   .about-backdrop,
   .process-stage,
   .process-dot,
@@ -1983,24 +1981,20 @@ a {
   }
 
   .about-visual {
-    order: -1;
     margin: 0 auto;
     max-width: 420px;
   }
 
-  .about-copy-left,
-  .about-copy-right {
+  .about-content,
+  .about-copy {
     text-align: left;
     max-width: none;
   }
 
-  .about-copy-right .about-pills {
-    justify-content: flex-start;
-  }
-
   .about-backdrop {
     font-size: 64px;
-    top: 28%;
+    left: 50%;
+    top: 22%;
   }
 
   .hero-visual {
