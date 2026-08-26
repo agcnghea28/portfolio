@@ -172,4 +172,23 @@ export const projects = [
     tools: ["Placeholder tool"],
     accent: "#fce38a",
   },
+  {
+    id: "huayun-luxury-trains",
+    title: "Huayun Luxury Trains",
+    client: "Placeholder client",
+    shared: false,
+    tags: [],
+    cover: "/projects/huayun-luxury-trains.svg",
+    screenshots: [
+      {
+        src: "/projects/huayun-luxury-trains.svg",
+        alt: "Placeholder screenshot — Huayun Luxury Trains",
+      },
+    ],
+    figmaUrl: "",
+    summary:
+      "Placeholder — project summary for Huayun Luxury Trains. Replace with the case-study description.",
+    tools: ["Placeholder tool"],
+    accent: "#c9b6f2",
+  },
 ];

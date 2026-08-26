@@ -49,20 +49,6 @@ export default function ProjectsSection() {
     setShotIndex(0);
   }
 
-  function showPrev() {
-    if (!active) return;
-    const next = (activeIndex - 1 + projects.length) % projects.length;
-    setShotIndex(0);
-    setActiveId(projects[next].id);
-  }
-
-  function showNext() {
-    if (!active) return;
-    const next = (activeIndex + 1) % projects.length;
-    setShotIndex(0);
-    setActiveId(projects[next].id);
-  }
-
   function revealMore() {
     setVisibleCount((count) => Math.min(count + PROJECTS_PAGE_SIZE, projects.length));
   }
@@ -294,14 +280,6 @@ export default function ProjectsSection() {
                         Figma link · placeholder
                       </span>
                     )}
-                    <div className="project-modal-nav">
-                      <button type="button" className="btn btn-ghost" onClick={showPrev}>
-                        Previous
-                      </button>
-                      <button type="button" className="btn btn-ghost" onClick={showNext}>
-                        Next
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>

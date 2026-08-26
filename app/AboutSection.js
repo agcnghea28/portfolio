@@ -46,7 +46,6 @@ export default function AboutSection() {
   return (
     <div className="about" ref={stageRef}>
       <div className="about-heading">
-        <span className="tag">01</span>
         <h2 className="about-title">About ME</h2>
       </div>
 

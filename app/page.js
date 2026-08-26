@@ -52,7 +52,6 @@ export default function Home() {
       <section className="section tools-section" id="tools">
         <div className="wrap">
           <Reveal className="section-head">
-            <span className="tag">02</span>
             <h2 className="section-title">Tools I work with</h2>
           </Reveal>
         </div>
@@ -62,7 +61,6 @@ export default function Home() {
       <section className="section" id="process">
         <div className="wrap">
           <Reveal className="section-head">
-            <span className="tag">03</span>
             <h2 className="section-title">Design process</h2>
           </Reveal>
           <Reveal>
@@ -74,7 +72,6 @@ export default function Home() {
       <section className="section" id="projects">
         <div className="wrap">
           <Reveal className="section-head">
-            <span className="tag">04</span>
             <h2 className="section-title">Projects</h2>
           </Reveal>
           <ProjectsSection />
@@ -84,7 +81,6 @@ export default function Home() {
       <section className="section" id="skills">
         <div className="wrap">
           <Reveal className="section-head">
-            <span className="tag">05</span>
             <h2 className="section-title">Skills</h2>
           </Reveal>
           <Reveal>
@@ -98,14 +94,31 @@ export default function Home() {
           <Reveal as="div" className="frame contact-frame">
             <span className="handle-tl" />
             <span className="handle-tr" />
-            <h2 className="contact-title">Let&apos;s work together.</h2>
-            <p className="contact-sub">
-              Open to freelance, contract, and full-time opportunities.
-            </p>
-            <div className="contact-links">
-              <a className="btn btn-solid" href="mailto:agcangghea@gmail.com">Email</a>
-              <a className="btn btn-ghost" href="https://www.linkedin.com/in/ghea-agcang/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a className="btn btn-ghost" href="https://github.com/agcnghea28" target="_blank" rel="noreferrer">GitHub</a>
+            <div className="contact-grid">
+              <div className="contact-main">
+                <h2 className="contact-title">Have a project in mind? Let&apos;s build it right.</h2>
+                <p className="contact-sub">
+                  I partner with founders and teams to shape clean, user-focused experiences from first
+                  concept to launch-ready screens and code.
+                </p>
+                <div className="contact-links">
+                  <a className="btn btn-solid" href="mailto:agcangghea@gmail.com">Start via email</a>
+                  <a className="btn btn-ghost" href="https://www.linkedin.com/in/ghea-agcang/" target="_blank" rel="noreferrer">LinkedIn</a>
+                  <a className="btn btn-ghost" href="https://github.com/agcnghea28" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+              </div>
+
+              <div className="contact-visual" aria-hidden="true">
+                <Image
+                  className="contact-illustration"
+                  src="/contact-illustration.svg"
+                  alt=""
+                  width={520}
+                  height={520}
+                  sizes="(max-width: 768px) 70vw, 320px"
+                  unoptimized
+                />
+              </div>
             </div>
           </Reveal>
         </div>

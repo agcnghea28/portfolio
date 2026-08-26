@@ -9,8 +9,8 @@
   --violet: #6d4fc4;
   --line: #e7e3ee;
   --radius: 14px;
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Zalando Sans Expanded", system-ui, sans-serif;
+  --font-body: "Geist", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
 
@@ -234,7 +234,7 @@ a {
 }
 
 .nav-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
@@ -248,7 +248,7 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
 }
@@ -595,7 +595,7 @@ a {
 }
 
 .about-pill {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   line-height: 1;
@@ -853,7 +853,7 @@ a {
 }
 
 .tool-filter {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 14px;
   line-height: 1;
@@ -1031,7 +1031,7 @@ a {
 }
 
 .tool-pill h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -1568,7 +1568,7 @@ a {
 }
 
 .project-modal-tools li {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   padding: 7px 12px;
@@ -1770,7 +1770,7 @@ a {
 }
 
 .skill-chip {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
@@ -1791,29 +1791,73 @@ a {
 
 /* --- Contact --- */
 .contact-frame {
-  background: rgba(255, 255, 255, 0.86);
-  padding: 48px 44px;
-  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 14%, rgba(201, 182, 242, 0.24), transparent 42%),
+    radial-gradient(circle at 8% 92%, rgba(246, 198, 216, 0.2), transparent 42%),
+    rgba(255, 255, 255, 0.9);
+  padding: clamp(32px, 5vw, 54px);
   backdrop-filter: blur(8px);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.9fr);
+  gap: clamp(18px, 3vw, 32px);
+  align-items: center;
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .contact-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(28px, 4vw, 40px);
-  margin: 0 0 14px;
+  font-size: clamp(30px, 4.4vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+  max-width: 18ch;
 }
 
 .contact-sub {
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--ink-soft);
-  margin: 0 0 28px;
+  margin: 0 0 26px;
 }
 
 .contact-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.contact-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+  background: transparent;
+}
+
+.contact-illustration {
+  width: min(100%, 320px);
+  height: auto;
+  display: block;
+  background: transparent;
+  animation: contact-float 5.5s ease-in-out infinite;
+}
+
+@keyframes contact-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .footer {
@@ -1855,6 +1899,7 @@ a {
   .btn,
   .hero-card,
   .hero-card-photo,
+  .contact-illustration,
   .page-gradient,
   .page-orb {
     animation: none !important;
@@ -2030,11 +2075,34 @@ a {
   .tool-marquee-right .tool-track {
     animation-duration: 42s;
   }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-title {
+    max-width: none;
+  }
+
+  .contact-visual {
+    order: -1;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .contact-illustration {
+    width: 100%;
+    animation: none;
+  }
 }
 
 @media (max-width: 640px) {
   .contact-frame {
     padding: 36px 22px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 
   .nav {
