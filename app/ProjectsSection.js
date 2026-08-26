@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Reveal from "./Reveal";
 import { PROJECTS_PAGE_SIZE, projects } from "./projects";
 
@@ -190,121 +191,124 @@ export default function ProjectsSection() {
         </div>
       ) : null}
 
-      {active ? (
-        <div
-          className="project-modal-root"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) closeProject();
-          }}
-        >
-          <div
-            className="project-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={dialogId}
-          >
-            <button
-              ref={closeRef}
-              type="button"
-              className="project-modal-close"
-              onClick={closeProject}
-              aria-label="Close project details"
+      {active
+        ? createPortal(
+            <div
+              className="project-modal-root"
+              role="presentation"
+              onMouseDown={(event) => {
+                if (event.target === event.currentTarget) closeProject();
+              }}
             >
-              Close
-            </button>
-
-            <div className="project-modal-gallery">
-              {shots[shotIndex] ? (
-                <img
-                  src={shots[shotIndex].src}
-                  alt={shots[shotIndex].alt}
-                  className="project-modal-shot"
-                />
-              ) : (
-                <div
-                  className="project-modal-shot is-empty"
-                  style={{ background: active.accent }}
+              <div
+                className="project-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={dialogId}
+              >
+                <button
+                  ref={closeRef}
+                  type="button"
+                  className="project-modal-close"
+                  onClick={closeProject}
+                  aria-label="Close project details"
                 >
-                  Placeholder screenshot
-                </div>
-              )}
-              {shots.length > 1 ? (
-                <div className="project-modal-thumbs" role="tablist" aria-label="Screenshots">
-                  {shots.map((shot, index) => (
-                    <button
-                      key={`${shot.src}-${index}`}
-                      type="button"
-                      className={`project-modal-thumb${index === shotIndex ? " is-active" : ""}`}
-                      aria-label={`Show screenshot ${index + 1}`}
-                      onClick={() => setShotIndex(index)}
+                  Close
+                </button>
+
+                <div className="project-modal-gallery">
+                  {shots[shotIndex] ? (
+                    <img
+                      src={shots[shotIndex].src}
+                      alt={shots[shotIndex].alt}
+                      className="project-modal-shot"
+                    />
+                  ) : (
+                    <div
+                      className="project-modal-shot is-empty"
+                      style={{ background: active.accent }}
                     >
-                      <img src={shot.src} alt="" />
-                    </button>
-                  ))}
+                      Placeholder screenshot
+                    </div>
+                  )}
+                  {shots.length > 1 ? (
+                    <div className="project-modal-thumbs" role="tablist" aria-label="Screenshots">
+                      {shots.map((shot, index) => (
+                        <button
+                          key={`${shot.src}-${index}`}
+                          type="button"
+                          className={`project-modal-thumb${index === shotIndex ? " is-active" : ""}`}
+                          aria-label={`Show screenshot ${index + 1}`}
+                          onClick={() => setShotIndex(index)}
+                        >
+                          <img src={shot.src} alt="" />
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="project-modal-note">Placeholder screenshot — add more in projects.js</p>
+                  )}
                 </div>
-              ) : (
-                <p className="project-modal-note">Placeholder screenshot — add more in projects.js</p>
-              )}
-            </div>
 
-            <div className="project-modal-body">
-              <div className="project-modal-kicker">
-                <span className="tag">{String(activeIndex + 1).padStart(2, "0")}</span>
-                {active.shared ? <span className="tag">Shared project</span> : null}
-                {active.tags.map((tag) => (
-                  <span key={tag} className="tag">{tag}</span>
-                ))}
-              </div>
-              <h3 id={dialogId} className="project-modal-title">
-                {active.title}
-              </h3>
-              <p className="project-modal-client">{active.client}</p>
-              <p className="project-modal-summary">{active.summary}</p>
-
-              <div className="project-modal-meta">
-                <div>
-                  <p className="project-modal-label">Tools used</p>
-                  <ul className="project-modal-tools">
-                    {active.tools.map((tool) => (
-                      <li key={tool}>{tool}</li>
+                <div className="project-modal-body">
+                  <div className="project-modal-kicker">
+                    <span className="tag">{String(activeIndex + 1).padStart(2, "0")}</span>
+                    {active.shared ? <span className="tag">Shared project</span> : null}
+                    {active.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
                     ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="project-modal-label">Client / company</p>
-                  <p className="project-modal-value">{active.client}</p>
-                </div>
-              </div>
+                  </div>
+                  <h3 id={dialogId} className="project-modal-title">
+                    {active.title}
+                  </h3>
+                  <p className="project-modal-client">{active.client}</p>
+                  <p className="project-modal-summary">{active.summary}</p>
 
-              <div className="project-modal-actions">
-                {active.figmaUrl ? (
-                  <a
-                    className="btn btn-solid"
-                    href={active.figmaUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Open in Figma
-                  </a>
-                ) : (
-                  <span className="btn btn-ghost is-disabled" aria-disabled="true">
-                    Figma link · placeholder
-                  </span>
-                )}
-                <div className="project-modal-nav">
-                  <button type="button" className="btn btn-ghost" onClick={showPrev}>
-                    Previous
-                  </button>
-                  <button type="button" className="btn btn-ghost" onClick={showNext}>
-                    Next
-                  </button>
+                  <div className="project-modal-meta">
+                    <div>
+                      <p className="project-modal-label">Tools used</p>
+                      <ul className="project-modal-tools">
+                        {active.tools.map((tool) => (
+                          <li key={tool}>{tool}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="project-modal-label">Client / company</p>
+                      <p className="project-modal-value">{active.client}</p>
+                    </div>
+                  </div>
+
+                  <div className="project-modal-actions">
+                    {active.figmaUrl ? (
+                      <a
+                        className="btn btn-solid"
+                        href={active.figmaUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Open in Figma
+                      </a>
+                    ) : (
+                      <span className="btn btn-ghost is-disabled" aria-disabled="true">
+                        Figma link · placeholder
+                      </span>
+                    )}
+                    <div className="project-modal-nav">
+                      <button type="button" className="btn btn-ghost" onClick={showPrev}>
+                        Previous
+                      </button>
+                      <button type="button" className="btn btn-ghost" onClick={showNext}>
+                        Next
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      ) : null}
+            </div>,
+            document.body
+          )
+        : null}
     </div>
   );
 }
