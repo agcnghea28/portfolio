@@ -210,7 +210,15 @@ export default function ProjectsSection() {
                   onClick={closeProject}
                   aria-label="Close project details"
                 >
-                  Close
+                  <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                    <path
+                      d="M4 4l8 8M12 4l-8 8"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                    />
+                  </svg>
                 </button>
 
                 <div className="project-modal-gallery">
@@ -263,13 +271,13 @@ export default function ProjectsSection() {
 
                   <section className="project-modal-section">
                     <h4 className="project-modal-heading">My Contribution</h4>
+                    <p className="project-modal-summary">{active.contribution}</p>
                     {active.role ? (
                       <div className="project-modal-role-block">
                         <p className="project-modal-label">Role</p>
                         <p className="project-modal-value">{active.role}</p>
                       </div>
                     ) : null}
-                    <p className="project-modal-summary">{active.contribution}</p>
                   </section>
 
                   <section className="project-modal-section">
@@ -293,32 +301,28 @@ export default function ProjectsSection() {
                   {(active.figmaUrl || active.liveUrl) ? (
                     <section className="project-modal-section">
                       <h4 className="project-modal-heading">Links</h4>
-                      <ul className="project-modal-links">
+                      <div className="project-modal-links">
                         {active.figmaUrl ? (
-                          <li>
-                            Design/Figma:{" "}
-                            <a
-                              href={active.figmaUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              View Link
-                            </a>
-                          </li>
+                          <a
+                            className="project-modal-link-btn"
+                            href={active.figmaUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            View Figma Design
+                          </a>
                         ) : null}
                         {active.liveUrl ? (
-                          <li>
-                            Live Site:{" "}
-                            <a
-                              href={active.liveUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              View Website
-                            </a>
-                          </li>
+                          <a
+                            className="project-modal-link-btn"
+                            href={active.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            View Website
+                          </a>
                         ) : null}
-                      </ul>
+                      </div>
                     </section>
                   ) : null}
 
