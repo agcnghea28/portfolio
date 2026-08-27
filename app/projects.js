@@ -16,7 +16,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/cFdzqK185z8JCuk4OwVzpO/Work-Projects-2?node-id=0-1&t=03ZXPDeSgjVLA2kP-1",
-    liveUrl: "",
+    liveUrl: "https://littlechineseeverywhere.com/",
     summary:
       "Little Chinese Everywhere is a travel and storytelling platform that brings LCE journeys to life through an interactive map and engaging stories about the people, places, and cultures they encounter. The website also includes a shop for merchandise and products related to their travels and the devices they use.",
     role: "UI/UX Designer & Web Developer",
@@ -40,7 +40,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/df3pNg9g7UmLJv45DacBr6/Work-Projects-3?node-id=0-1&t=WDR4y7zsfdn6tLfN-1",
-    liveUrl: "",
+    liveUrl: "https://www.turbotender.com/",
     summary:
       "TurboTender is a B2B website for an AI-powered government procurement platform. The website presents the platform's capabilities, procurement workflows, and value proposition while helping establish trust with government procurement teams.",
     role: "UI/UX Designer & Web Developer",
@@ -64,7 +64,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/R5WYwJhFqZQjWZvZoHUNmC/Work-Projects-1?node-id=0-1&t=s5c8IbHcQ9bqfFF6-1",
-    liveUrl: "",
+    liveUrl: "https://www.lrfsport.com.au/",
     summary:
       "This project is designed and built six category-specific landing pages for LRF's teamwear promotions, using a consistent, reusable layout while adapting imagery, product selections, and content for each sporting category.",
     role: "UI/UX Designer & Web Developer",
@@ -88,7 +88,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/df3pNg9g7UmLJv45DacBr6/Work-Projects-3?node-id=6-2756&t=WDR4y7zsfdn6tLfN-1",
-    liveUrl: "",
+    liveUrl: "https://teamwear-factory.com/",
     summary:
       "Teamwear Factory is an e-commerce website for custom sports apparel and uniforms, allowing teams to browse products, explore categories, and create personalized teamwear through a custom uniform design experience.",
     role: "UI/UX Designer & Web Developer",
@@ -112,7 +112,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/df3pNg9g7UmLJv45DacBr6/Work-Projects-3?node-id=5-77&t=WDR4y7zsfdn6tLfN-1",
-    liveUrl: "",
+    liveUrl: "https://p1peline.io/",
     summary:
       "P1peline is a technology and digital solutions company that helps businesses streamline operations and unlock growth through scalable platforms, custom software, and integrated services. The website presents P1peline's capabilities, services, and approach to potential clients.",
     role: "UI/UX Designer",
@@ -136,7 +136,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/R5WYwJhFqZQjWZvZoHUNmC/Work-Projects-1?node-id=11-6707&t=s5c8IbHcQ9bqfFF6-1",
-    liveUrl: "",
+    liveUrl: "https://themovebetterproject.com/",
     summary:
       "The Move Better Project is a custom performance apparel company that creates apparel for gyms, teams, events, and fitness communities. The project involved redesigning its website to better communicate the brand, showcase its custom apparel capabilities, present its design-to-delivery process, and provide a clearer e-commerce experience. I also designed and integrated EMOM, a monthly tee subscription offering developed as part of the TMBP brand.",
     role: "UI/UX Designer & Web Developer",
@@ -160,7 +160,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/cFdzqK185z8JCuk4OwVzpO/Work-Projects-2?node-id=2006-857&t=03ZXPDeSgjVLA2kP-1",
-    liveUrl: "",
+    liveUrl: "https://edgysport.com/",
     summary:
       "Edgy Sport is a custom sportswear brand providing customizable team apparel and uniforms. The project involved collaboratively redesigning and implementing key pages of the website to improve product presentation, communicate its customization services, and create a clearer shopping experience. The site also integrates a third-party 3D kit builder for custom uniform design.",
     role: "UI/UX Designer & Web Developer",
@@ -184,7 +184,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/R5WYwJhFqZQjWZvZoHUNmC/Work-Projects-1?node-id=11-22720&t=s5c8IbHcQ9bqfFF6-1",
-    liveUrl: "",
+    liveUrl: "https://sphere-resources.com/",
     summary:
       "Sphere Resources is a B2B manufacturing and procurement partner that helps businesses develop, source, and deliver custom products through its network of manufacturing partners in Asia. The project focused on redesigning key areas of the website to improve its structure, navigation, content presentation, and product discovery experience.",
     role: "UI/UX Designer & Web Developer",
@@ -208,7 +208,7 @@ export const projects = [
     ],
     figmaUrl:
       "https://www.figma.com/design/cFdzqK185z8JCuk4OwVzpO/Work-Projects-2?node-id=2006-13950&t=03ZXPDeSgjVLA2kP-1",
-    liveUrl: "",
+    liveUrl: "https://sphere-sports.com/",
     summary:
       "Sphere Sport is a custom sportswear manufacturer specializing in sports uniforms and apparel for teamwear brands and organizations. The website redesign focused on improving the presentation of its products, manufacturing capabilities, services, and sports-specific categories while creating a clearer and more structured browsing experience.",
     role: "UI/UX Designer & Web Developer",

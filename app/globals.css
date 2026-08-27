@@ -1260,7 +1260,7 @@ a {
 .project-folder-body {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 5.4;
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--line);
@@ -1276,10 +1276,10 @@ a {
 
 .project-folder-peek {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
-  bottom: 34%;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 28%;
   overflow: hidden;
   border-radius: 10px;
   background: var(--paper);
@@ -1309,8 +1309,8 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 38%;
-  padding: 14px 14px 16px;
+  height: 30%;
+  padding: 12px 14px 12px;
   background: var(--white);
   box-shadow: 0 -10px 16px -12px rgba(23, 20, 31, 0.18);
 }
@@ -1344,11 +1344,25 @@ a {
   font-family: var(--font-mono);
   font-size: 10px;
   line-height: 1.2;
-  color: var(--ink-soft);
-  background: var(--white);
-  border: 1px solid var(--line);
+  color: var(--violet);
+  background: rgba(201, 182, 242, 0.28);
+  border: 1px solid rgba(109, 79, 196, 0.28);
   border-radius: 999px;
   padding: 4px 8px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-card:hover .project-type-pill,
+.project-card:focus-visible .project-type-pill,
+.project-type-pill:hover {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+  transform: translateY(-1px);
 }
 
 .project-type-pills.is-modal {
@@ -1357,8 +1371,8 @@ a {
 
 .project-type-pills.is-modal .project-type-pill {
   font-size: 11px;
-  color: var(--violet);
   padding: 5px 10px;
+  cursor: default;
 }
 
 .project-more {
@@ -1428,7 +1442,7 @@ a {
   position: absolute;
   top: 14px;
   right: 14px;
-  z-index: 2;
+  z-index: 3;
   font-family: var(--font-mono);
   font-size: 12px;
   padding: 6px 12px;
@@ -1451,10 +1465,19 @@ a {
 }
 
 .project-modal-gallery {
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(201, 182, 242, 0.22), rgba(246, 198, 216, 0.16));
+  border-right: 1px solid var(--line);
+}
+
+.project-modal-gallery-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: 22px;
   background:
-    linear-gradient(180deg, rgba(201, 182, 242, 0.18), rgba(246, 198, 216, 0.12));
-  border-right: 1px solid var(--line);
+    linear-gradient(180deg, rgba(201, 182, 242, 0.22), rgba(246, 198, 216, 0.16));
 }
 
 .project-modal-shot {
@@ -1506,7 +1529,6 @@ a {
 
 .project-modal-body {
   padding: 36px 28px 28px;
-  overflow: auto;
 }
 
 .project-modal-title {
@@ -1537,11 +1559,8 @@ a {
   border: 0;
 }
 
-.project-modal-role {
-  margin: 0 0 8px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--violet);
+.project-modal-role-block {
+  margin: 0 0 12px;
 }
 
 .project-modal-summary {
@@ -1590,21 +1609,28 @@ a {
 }
 
 .project-modal-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
 }
 
-.project-modal-link-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+.project-modal-links a {
+  color: var(--violet);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
 }
 
-.project-modal-link-row .project-modal-label {
-  margin: 0;
+.project-modal-links a:hover,
+.project-modal-links a:focus-visible {
+  color: var(--ink);
 }
 
 .project-modal-disclaimer {
@@ -1972,6 +1998,10 @@ a {
   .project-modal-gallery {
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .project-modal-gallery-sticky {
+    position: static;
   }
 
   .project-modal-shot {

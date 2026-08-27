@@ -214,35 +214,37 @@ export default function ProjectsSection() {
                 </button>
 
                 <div className="project-modal-gallery">
-                  {shots[shotIndex] ? (
-                    <img
-                      src={shots[shotIndex].src}
-                      alt={shots[shotIndex].alt}
-                      className="project-modal-shot"
-                    />
-                  ) : (
-                    <div
-                      className="project-modal-shot is-empty"
-                      style={{ background: active.accent }}
-                    >
-                      Placeholder screenshot
-                    </div>
-                  )}
-                  {shots.length > 1 ? (
-                    <div className="project-modal-thumbs" role="tablist" aria-label="Screenshots">
-                      {shots.map((shot, index) => (
-                        <button
-                          key={`${shot.src}-${index}`}
-                          type="button"
-                          className={`project-modal-thumb${index === shotIndex ? " is-active" : ""}`}
-                          aria-label={`Show screenshot ${index + 1}`}
-                          onClick={() => setShotIndex(index)}
-                        >
-                          <img src={shot.src} alt="" />
-                        </button>
-                      ))}
-                    </div>
-                  ) : null}
+                  <div className="project-modal-gallery-sticky">
+                    {shots[shotIndex] ? (
+                      <img
+                        src={shots[shotIndex].src}
+                        alt={shots[shotIndex].alt}
+                        className="project-modal-shot"
+                      />
+                    ) : (
+                      <div
+                        className="project-modal-shot is-empty"
+                        style={{ background: active.accent }}
+                      >
+                        Placeholder screenshot
+                      </div>
+                    )}
+                    {shots.length > 1 ? (
+                      <div className="project-modal-thumbs" role="tablist" aria-label="Screenshots">
+                        {shots.map((shot, index) => (
+                          <button
+                            key={`${shot.src}-${index}`}
+                            type="button"
+                            className={`project-modal-thumb${index === shotIndex ? " is-active" : ""}`}
+                            aria-label={`Show screenshot ${index + 1}`}
+                            onClick={() => setShotIndex(index)}
+                          >
+                            <img src={shot.src} alt="" />
+                          </button>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
 
                 <div className="project-modal-body">
@@ -262,7 +264,10 @@ export default function ProjectsSection() {
                   <section className="project-modal-section">
                     <h4 className="project-modal-heading">My Contribution</h4>
                     {active.role ? (
-                      <p className="project-modal-role">{active.role}</p>
+                      <div className="project-modal-role-block">
+                        <p className="project-modal-label">Role</p>
+                        <p className="project-modal-value">{active.role}</p>
+                      </div>
                     ) : null}
                     <p className="project-modal-summary">{active.contribution}</p>
                   </section>
@@ -288,34 +293,32 @@ export default function ProjectsSection() {
                   {(active.figmaUrl || active.liveUrl) ? (
                     <section className="project-modal-section">
                       <h4 className="project-modal-heading">Links</h4>
-                      <div className="project-modal-links">
+                      <ul className="project-modal-links">
                         {active.figmaUrl ? (
-                          <div className="project-modal-link-row">
-                            <span className="project-modal-label">Design / Figma</span>
+                          <li>
+                            Design/Figma:{" "}
                             <a
-                              className="btn btn-solid"
                               href={active.figmaUrl}
                               target="_blank"
                               rel="noreferrer"
                             >
                               View Link
                             </a>
-                          </div>
+                          </li>
                         ) : null}
                         {active.liveUrl ? (
-                          <div className="project-modal-link-row">
-                            <span className="project-modal-label">Live Site</span>
+                          <li>
+                            Live Site:{" "}
                             <a
-                              className="btn btn-ghost"
                               href={active.liveUrl}
                               target="_blank"
                               rel="noreferrer"
                             >
                               View Website
                             </a>
-                          </div>
+                          </li>
                         ) : null}
-                      </div>
+                      </ul>
                     </section>
                   ) : null}
 
