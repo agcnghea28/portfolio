@@ -20,6 +20,21 @@ function ChevronIcon({ direction }) {
   );
 }
 
+function TypePills({ types, shared, className = "" }) {
+  const pills = [...(shared ? ["Shared"] : []), ...(types || [])];
+  if (!pills.length) return null;
+
+  return (
+    <span className={`project-type-pills ${className}`.trim()}>
+      {pills.map((type) => (
+        <span key={type} className="project-type-pill">
+          {type}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 export default function ProjectsSection() {
   const dialogId = useId();
   const closeRef = useRef(null);
@@ -114,11 +129,7 @@ export default function ProjectsSection() {
               onClick={(event) => openProject(project.id, event)}
               aria-haspopup="dialog"
             >
-              <span className="project-folder-tab">
-                {project.shared ? (
-                  <span className="project-card-badge">Shared</span>
-                ) : null}
-              </span>
+              <span className="project-folder-tab" />
               <span className="project-folder-body">
                 <span className="project-folder-peek">
                   <span
@@ -132,7 +143,7 @@ export default function ProjectsSection() {
                 <span className="project-folder-flap">
                   <span className="project-card-copy">
                     <span className="project-card-title">{project.title}</span>
-                    <span className="project-client-pill">{project.client}</span>
+                    <TypePills types={project.types} shared={project.shared} />
                   </span>
                 </span>
               </span>
@@ -235,50 +246,83 @@ export default function ProjectsSection() {
                 </div>
 
                 <div className="project-modal-body">
-                  <div className="project-modal-kicker">
-                    <span className="tag">{String(activeIndex + 1).padStart(2, "0")}</span>
-                    {active.shared ? <span className="tag">Shared project</span> : null}
-                    {active.tags.map((tag) => (
-                      <span key={tag} className="tag">{tag}</span>
-                    ))}
-                  </div>
+                  <TypePills types={active.types} shared={active.shared} className="is-modal" />
+
                   <h3 id={dialogId} className="project-modal-title">
                     {active.title}
                   </h3>
-                  <p className="project-modal-client">{active.client}</p>
-                  <p className="project-modal-summary">{active.summary}</p>
 
-                  <div className="project-modal-meta">
-                    <div>
-                      <p className="project-modal-label">Tools used</p>
-                      <ul className="project-modal-tools">
-                        {active.tools.map((tool) => (
-                          <li key={tool}>{tool}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="project-modal-label">Client / company</p>
-                      <p className="project-modal-value">{active.client}</p>
-                    </div>
-                  </div>
+                  <section className="project-modal-section">
+                    <h4 className="project-modal-heading">Overview</h4>
+                    <p className="project-modal-summary">{active.summary}</p>
+                  </section>
 
-                  <div className="project-modal-actions">
-                    {active.figmaUrl ? (
-                      <a
-                        className="btn btn-solid"
-                        href={active.figmaUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Open in Figma
-                      </a>
-                    ) : (
-                      <span className="btn btn-ghost is-disabled" aria-disabled="true">
-                        Figma link · placeholder
-                      </span>
-                    )}
-                  </div>
+                  <div className="project-modal-divider" role="separator" />
+
+                  <section className="project-modal-section">
+                    <h4 className="project-modal-heading">My Contribution</h4>
+                    {active.role ? (
+                      <p className="project-modal-role">{active.role}</p>
+                    ) : null}
+                    <p className="project-modal-summary">{active.contribution}</p>
+                  </section>
+
+                  <section className="project-modal-section">
+                    <h4 className="project-modal-heading">Project Details</h4>
+                    <div className="project-modal-meta">
+                      <div>
+                        <p className="project-modal-label">Tools</p>
+                        <ul className="project-modal-tools">
+                          {active.tools.map((tool) => (
+                            <li key={tool}>{tool}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="project-modal-label">Client</p>
+                        <p className="project-modal-value">{active.client}</p>
+                      </div>
+                    </div>
+                  </section>
+
+                  {(active.figmaUrl || active.liveUrl) ? (
+                    <section className="project-modal-section">
+                      <h4 className="project-modal-heading">Links</h4>
+                      <div className="project-modal-links">
+                        {active.figmaUrl ? (
+                          <div className="project-modal-link-row">
+                            <span className="project-modal-label">Design / Figma</span>
+                            <a
+                              className="btn btn-solid"
+                              href={active.figmaUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              View Link
+                            </a>
+                          </div>
+                        ) : null}
+                        {active.liveUrl ? (
+                          <div className="project-modal-link-row">
+                            <span className="project-modal-label">Live Site</span>
+                            <a
+                              className="btn btn-ghost"
+                              href={active.liveUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              View Website
+                            </a>
+                          </div>
+                        ) : null}
+                      </div>
+                    </section>
+                  ) : null}
+
+                  <p className="project-modal-disclaimer">
+                    The live site may differ from the version shown in the mock-up. Some designs
+                    have since been updated or modified by the client after my involvement.
+                  </p>
                 </div>
               </div>
             </div>,

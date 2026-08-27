@@ -1237,12 +1237,10 @@ a {
   top: 0;
   left: 16px;
   z-index: 2;
-  display: flex;
-  align-items: center;
+  display: block;
   width: 38%;
   min-width: 88px;
   height: 20px;
-  padding: 0 8px;
   background: var(--folder-accent);
   border: 1px solid var(--line);
   border-bottom: 0;
@@ -1281,7 +1279,7 @@ a {
   top: 14px;
   left: 14px;
   right: 14px;
-  bottom: 30%;
+  bottom: 34%;
   overflow: hidden;
   border-radius: 10px;
   background: var(--paper);
@@ -1311,22 +1309,10 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 34%;
-  padding: 16px 16px 18px;
+  height: 38%;
+  padding: 14px 14px 16px;
   background: var(--white);
   box-shadow: 0 -10px 16px -12px rgba(23, 20, 31, 0.18);
-}
-
-.project-card-badge {
-  position: relative;
-  z-index: 1;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  background: rgba(255, 255, 255, 0.78);
-  border-radius: 999px;
-  padding: 2px 7px;
 }
 
 .project-card-copy {
@@ -1334,25 +1320,44 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  height: 100%;
 }
 
 .project-card-title {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.25;
   color: var(--ink);
 }
 
-.project-client-pill {
+.project-type-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.project-type-pill {
   display: inline-flex;
   max-width: 100%;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
+  line-height: 1.2;
   color: var(--ink-soft);
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.project-type-pills.is-modal {
+  margin-bottom: 12px;
+}
+
+.project-type-pills.is-modal .project-type-pill {
+  font-size: 11px;
+  color: var(--violet);
   padding: 5px 10px;
 }
 
@@ -1499,40 +1504,48 @@ a {
   object-fit: cover;
 }
 
-.project-modal-note {
-  margin: 12px 0 0;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-soft);
-}
-
 .project-modal-body {
   padding: 36px 28px 28px;
-}
-
-.project-modal-kicker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px;
+  overflow: auto;
 }
 
 .project-modal-title {
   font-family: var(--font-display);
   font-size: clamp(26px, 3vw, 34px);
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 18px;
 }
 
-.project-modal-client {
-  margin: 0 0 16px;
+.project-modal-section {
+  margin: 0 0 18px;
+}
+
+.project-modal-heading {
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.project-modal-divider {
+  height: 1px;
+  margin: 4px 0 18px;
+  background: var(--line);
+  border: 0;
+}
+
+.project-modal-role {
+  margin: 0 0 8px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--violet);
 }
 
 .project-modal-summary {
-  margin: 0 0 22px;
+  margin: 0;
   font-size: 15px;
   line-height: 1.65;
   color: var(--ink-soft);
@@ -1542,7 +1555,6 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  margin-bottom: 24px;
 }
 
 .project-modal-label {
@@ -1555,6 +1567,7 @@ a {
 .project-modal-value {
   margin: 0;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .project-modal-tools {
@@ -1576,17 +1589,32 @@ a {
   background: var(--white);
 }
 
-.project-modal-actions {
+.project-modal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-modal-link-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
-.project-modal-nav {
-  display: flex;
-  gap: 8px;
+.project-modal-link-row .project-modal-label {
+  margin: 0;
+}
+
+.project-modal-disclaimer {
+  margin: 8px 0 0;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ink-soft);
 }
 
 @keyframes project-modal-fade {
@@ -1948,6 +1976,14 @@ a {
 
   .project-modal-shot {
     aspect-ratio: 16 / 10;
+  }
+
+  .project-modal-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .project-modal-body {
+    padding: 28px 22px 24px;
   }
 }
 
