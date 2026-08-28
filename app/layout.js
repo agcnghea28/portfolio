@@ -8,6 +8,13 @@ export const metadata = {
     "Portfolio of Ghea J. Agcang, UI/UX designer and website developer.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#000000",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

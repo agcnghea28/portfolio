@@ -27,13 +27,18 @@ export default function SiteHeader() {
   }, []);
 
   useEffect(() => {
+    document.body.classList.toggle("is-nav-open", open);
+    return () => document.body.classList.remove("is-nav-open");
+  }, [open]);
+
+  useEffect(() => {
     if (!open) return undefined;
 
     const onKey = (event) => {
       if (event.key === "Escape") setOpen(false);
     };
     const onResize = () => {
-      if (window.matchMedia("(min-width: 901px)").matches) setOpen(false);
+      if (window.matchMedia("(min-width: 1101px)").matches) setOpen(false);
     };
 
     window.addEventListener("keydown", onKey);
@@ -49,7 +54,7 @@ export default function SiteHeader() {
   return (
     <nav className={navClass} aria-label="Primary">
       <div className="wrap nav-inner">
-        <a className="nav-brand" href="#home">
+        <a className="nav-brand" href="#home" onClick={() => setOpen(false)}>
           GHEA.
         </a>
 
