@@ -107,33 +107,37 @@ body {
 }
 
 .cursor-dot {
-  width: 5px;
-  height: 5px;
-  margin: -2.5px 0 0 -2.5px;
-  background: var(--accent);
-  transition: background 0.2s ease;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--white);
+  box-shadow: 0 0 0 1.5px var(--black);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cursor-ring {
   width: 18px;
   height: 18px;
   margin: -9px 0 0 -9px;
-  border: 1.5px solid var(--violet);
+  border: 2px solid var(--white);
   background: transparent;
+  box-shadow: 0 0 0 1.5px var(--black);
   transition:
     width 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
     height 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
     margin 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
     border-color 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .cursor.is-hover .cursor-ring {
   width: 22px;
   height: 22px;
   margin: -11px 0 0 -11px;
-  background: rgba(109, 79, 196, 0.08);
-  border-color: var(--violet);
+  background: transparent;
+  border-color: var(--white);
+  box-shadow: 0 0 0 1.5px var(--black);
 }
 
 a {
@@ -2865,12 +2869,14 @@ a {
 }
 
 .cursor-ring {
-  border-color: var(--ink);
+  border-color: var(--white);
+  box-shadow: 0 0 0 1.5px var(--black);
 }
 
 .cursor.is-hover .cursor-ring {
-  background: rgba(191, 13, 3, 0.08);
-  border-color: var(--accent);
+  background: transparent;
+  border-color: var(--white);
+  box-shadow: 0 0 0 1.5px var(--black);
 }
 
 .tag {
