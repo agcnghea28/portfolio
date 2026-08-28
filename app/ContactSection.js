@@ -27,12 +27,27 @@ function ContactMark() {
     <svg
       className="contact-mark"
       viewBox="0 0 48 48"
-      width="40"
-      height="40"
+      width="72"
+      height="72"
       aria-hidden="true"
     >
-      <rect x="6" y="12" width="36" height="24" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M6 12l18 14L42 12" fill="none" stroke="currentColor" strokeWidth="2" />
+      <rect
+        x="7"
+        y="13"
+        width="34"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3.5"
+        strokeLinejoin="miter"
+      />
+      <path
+        d="M7 13l17 13 17-13"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3.5"
+        strokeLinejoin="miter"
+      />
     </svg>
   );
 }
