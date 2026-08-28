@@ -2,10 +2,10 @@ import Image from "next/image";
 import { about } from "./about";
 
 const COLLAGE_SIZES = {
-  left: "(max-width: 768px) 46vw, 640px",
-  right: "(max-width: 768px) 46vw, 640px",
-  "mid-top": "(max-width: 768px) 46vw, 280px",
-  "mid-bot": "(max-width: 768px) 46vw, 280px",
+  left: "(max-width: 768px) 46vw, 720px",
+  right: "(max-width: 768px) 46vw, 720px",
+  "mid-top": "(max-width: 768px) 46vw, 360px",
+  "mid-bot": "(max-width: 768px) 46vw, 360px",
 };
 
 function CollagePhoto({ photo, priority = false }) {

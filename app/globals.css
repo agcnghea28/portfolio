@@ -826,9 +826,9 @@ a {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 42ch);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
   width: 100%;
-  max-width: 1080px;
+  max-width: none;
   margin-inline: auto;
   align-items: center;
   column-gap: clamp(28px, 4.5vw, 64px);
@@ -842,7 +842,7 @@ a {
   flex-direction: column;
   gap: 22px;
   min-width: 0;
-  max-width: 46ch;
+  max-width: none;
 }
 
 .about-copy {
@@ -852,7 +852,7 @@ a {
   flex-direction: column;
   gap: 22px;
   text-align: left;
-  max-width: 46ch;
+  max-width: none;
 }
 
 .reveal.is-visible .about-visual {
