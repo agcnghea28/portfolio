@@ -2437,9 +2437,7 @@ a {
   align-items: stretch;
   flex: 1 1 auto;
   min-height: 0;
-  overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow: hidden;
 }
 
 .project-modal-scroll::-webkit-scrollbar {
@@ -2507,18 +2505,20 @@ a {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 0;
+  height: 100%;
   padding: 0;
   background: transparent;
   border-right: 0;
 }
 
 .project-modal-gallery-sticky {
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 2;
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 22px;
   background: transparent;
 }
@@ -2527,8 +2527,10 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
+  max-height: 100%;
+  min-height: 0;
   object-fit: cover;
-  flex-shrink: 0;
+  flex: 1 1 auto;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #111;
@@ -2623,7 +2625,15 @@ a {
 .project-modal-body {
   position: relative;
   z-index: 1;
+  min-height: 0;
+  overflow: auto;
   padding: 36px 28px 28px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.project-modal-body::-webkit-scrollbar {
+  display: none;
 }
 
 .project-modal-title {
@@ -2738,9 +2748,9 @@ a {
   line-height: 1;
   padding: 8px 12px;
   border-radius: 0;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  background: transparent;
-  color: var(--white);
+  border: 1.5px solid var(--white);
+  background: var(--white);
+  color: var(--black);
   text-decoration: none;
   transition:
     background 0.2s ease,
@@ -2757,9 +2767,9 @@ a {
 
 .project-modal-link-btn:hover,
 .project-modal-link-btn:focus-visible {
-  background: var(--white);
-  color: var(--black);
-  border-color: var(--white);
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -3318,16 +3328,23 @@ a {
 
   .project-modal-scroll {
     grid-template-columns: 1fr;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .project-modal-gallery {
-    border-right: 0;
-    border-bottom: 0;
+    height: auto;
   }
 
   .project-modal-gallery-sticky {
     position: static;
+    height: auto;
     padding-bottom: 8px;
+  }
+
+  .project-modal-body {
+    overflow: visible;
   }
 
   .project-modal-shot {
@@ -3844,8 +3861,6 @@ a {
   border: 1.5px solid rgba(255, 255, 255, 0.42);
 }
 
-.project-modal-link-btn:hover,
-.project-modal-link-btn:focus-visible,
 .project-modal-link-btn.is-solid:hover,
 .project-modal-link-btn.is-solid:focus-visible {
   background: var(--white);
