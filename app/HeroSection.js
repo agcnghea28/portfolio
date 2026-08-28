@@ -36,7 +36,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <header className="hero" ref={ref}>
+    <header className="hero section--dark" ref={ref}>
       <div className="hero-burst" aria-hidden="true" />
       <p className="hero-mark" aria-hidden="true">
         Ghea

@@ -23,7 +23,7 @@ export const projects = [
     contribution:
       "Designed and implemented the website experience, including responsive page layouts, content presentation, navigation, interactive components, and e-commerce functionality.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
-    accent: "#c9b6f2",
+    accent: "#000000",
   },
   {
     id: "turbotender",
@@ -47,7 +47,7 @@ export const projects = [
     contribution:
       "Designed and implemented the website experience for a complex B2B/GovTech product, translating its procurement workflows, AI capabilities, and value proposition into clear, user-friendly pages.",
     tools: ["Figma", "WordPress", "Elementor"],
-    accent: "#f6c6d8",
+    accent: "#000000",
   },
   {
     id: "lrf",
@@ -71,7 +71,7 @@ export const projects = [
     contribution:
       "Designed and built six category-specific landing pages using a reusable layout structure, adapting imagery, product selections, and content for each campaign.",
     tools: ["The Web Console", "Figma"],
-    accent: "#fce38a",
+    accent: "#000000",
   },
   {
     id: "teamwear-factory",
@@ -95,7 +95,7 @@ export const projects = [
     contribution:
       "Designed and built the website end-to-end, including responsive layouts, product and category pages, navigation, and the integration of a third-party Kit Builder.",
     tools: ["Figma", "WordPress", "Elementor", "WooCommerce"],
-    accent: "#c9b6f2",
+    accent: "#000000",
   },
   {
     id: "p1peline",
@@ -119,7 +119,7 @@ export const projects = [
     contribution:
       "Created and refined website mockups and page layouts as part of the collaborative UI/UX design process.",
     tools: ["Figma", "WordPress", "Elementor"],
-    accent: "#f6c6d8",
+    accent: "#000000",
   },
   {
     id: "the-move-better-project",
@@ -143,7 +143,7 @@ export const projects = [
     contribution:
       "Contributed to the website redesign through UI/UX design and implementation across the site, including responsive page layouts, content presentation, e-commerce experiences, and the design and integration of the EMOM subscription experience.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
-    accent: "#fce38a",
+    accent: "#000000",
   },
   {
     id: "edgy-sport",
@@ -167,7 +167,7 @@ export const projects = [
     contribution:
       "Collaborated on the redesign and implementation of key website pages, contributing to UI/UX design and integrating the third-party 3D Kit Builder into the website.",
     tools: ["Figma", "WordPress", "Elementor", "WooCommerce"],
-    accent: "#c9b6f2",
+    accent: "#000000",
   },
   {
     id: "sphere-resources",
@@ -191,7 +191,7 @@ export const projects = [
     contribution:
       "Redesigned and implemented key website pages, the mega menu, and reusable archive templates directly in WordPress using Elementor.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
-    accent: "#f6c6d8",
+    accent: "#000000",
   },
   {
     id: "sphere-sport",
@@ -215,7 +215,7 @@ export const projects = [
     contribution:
       "Redesigned and implemented key website pages, the mega menu, and reusable archive templates directly in WordPress using Elementor.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
-    accent: "#fce38a",
+    accent: "#000000",
   },
   {
     id: "huayun-luxury-trains",
@@ -238,6 +238,6 @@ export const projects = [
     contribution:
       "Designed and implemented the main website sections, navigation menu, and reusable archive templates directly in WordPress using Elementor, including WooCommerce-powered tour and package presentation. Most of the UI/UX work was designed and implemented directly within the CMS rather than created as Figma mockups.",
     tools: ["WordPress", "Elementor", "WooCommerce"],
-    accent: "#c9b6f2",
+    accent: "#000000",
   },
 ];

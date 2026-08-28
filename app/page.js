@@ -41,7 +41,7 @@ export default function Home() {
 
       <HeroSection />
 
-      <section className="section about-section" id="about">
+      <section className="section section--dark about-section" id="about">
         <div className="wrap">
           <Reveal>
             <AboutSection />
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section tools-section" id="tools">
+      <section className="section section--accent tools-section" id="tools">
         <div className="wrap">
           <Reveal className="section-head">
             <h2 className="section-title">Tools I work with</h2>
@@ -58,7 +58,7 @@ export default function Home() {
         <ToolsGrid />
       </section>
 
-      <section className="section" id="process">
+      <section className="section section--dark" id="process">
         <div className="wrap">
           <Reveal className="section-head">
             <h2 className="section-title">Design process</h2>
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="projects">
+      <section className="section section--accent" id="projects">
         <div className="wrap">
           <Reveal className="section-head">
             <h2 className="section-title">Projects</h2>
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="skills">
+      <section className="section section--dark" id="skills">
         <div className="wrap">
           <Reveal className="section-head">
             <h2 className="section-title">Skills</h2>
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="contact">
+      <section className="section section--accent" id="contact">
         <div className="wrap">
           <Reveal as="div" className="frame contact-frame">
             <span className="handle-tl" />
@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
+      <footer className="footer section--dark">
         © {new Date().getFullYear()} Ghea J. Agcang — built with Next.js, deployed on Vercel.
       </footer>
     </>

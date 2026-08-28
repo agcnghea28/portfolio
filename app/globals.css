@@ -1,17 +1,21 @@
 :root {
   --white: #ffffff;
-  --paper: #fcfbfa;
-  --ink: #17141f;
-  --ink-soft: #4a4555;
-  --lavender: #c9b6f2;
-  --pink: #f6c6d8;
-  --yellow: #fce38a;
-  --violet: #6d4fc4;
-  --line: #e7e3ee;
-  --radius: 14px;
+  --black: #000000;
+  --paper: #ffffff;
+  --ink: #000000;
+  --ink-soft: #555555;
+  --accent: #bf0d03;
+  --line: rgba(0, 0, 0, 0.14);
+  --radius: 0;
   --font-display: "Zalando Sans Expanded", system-ui, sans-serif;
   --font-body: "Geist", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
+
+  /* Legacy token aliases */
+  --lavender: #000000;
+  --pink: #bf0d03;
+  --yellow: #ffffff;
+  --violet: #bf0d03;
 }
 
 * {
@@ -25,8 +29,8 @@ body {
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--black);
+  color: var(--white);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
@@ -101,7 +105,7 @@ body {
   width: 5px;
   height: 5px;
   margin: -2.5px 0 0 -2.5px;
-  background: var(--ink);
+  background: var(--accent);
   transition: background 0.2s ease;
 }
 
@@ -148,7 +152,7 @@ a {
   color: var(--violet);
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   padding: 4px 10px;
 }
 
@@ -180,8 +184,8 @@ a {
   position: absolute;
   width: 7px;
   height: 7px;
-  background: var(--violet);
-  border-radius: 2px;
+  background: var(--accent);
+  border-radius: 0;
 }
 
 .frame::before { top: -4px; left: -4px; }
@@ -207,12 +211,11 @@ a {
   column-gap: clamp(40px, 8vw, 88px);
   width: 100%;
   padding: 12px clamp(16px, 3vw, 32px);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  box-shadow:
-    0 1px 2px rgba(23, 20, 31, 0.04),
-    0 12px 40px -16px rgba(23, 20, 31, 0.14);
+  background: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--white);
 }
 
 .nav-brand {
@@ -228,7 +231,7 @@ a {
 .nav-logo {
   width: 34px;
   height: 34px;
-  border-radius: 50%;
+  border-radius: 0;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -239,6 +242,7 @@ a {
   font-size: 18px;
   line-height: 1;
   letter-spacing: -0.02em;
+  color: var(--white);
 }
 
 .nav-links {
@@ -268,18 +272,18 @@ a {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.72);
   transition: color 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-links a:hover {
-  color: var(--violet);
+  color: var(--accent);
 }
 
 .nav-link-placeholder {
-  color: var(--ink-soft);
-  opacity: 0.45;
+  color: rgba(255, 255, 255, 0.38);
+  opacity: 1;
   white-space: nowrap;
   cursor: default;
 }
@@ -293,6 +297,7 @@ a {
   place-items: center;
   min-height: min(78vh, 740px);
   padding: 64px 0 88px;
+  background: var(--black);
   --hx: 0px;
   --hy: 0px;
   --ha: 0deg;
@@ -308,7 +313,7 @@ a {
   transform: translate(-50%, -50%) rotate(var(--ha));
   background: repeating-conic-gradient(
     from 0deg,
-    rgba(109, 79, 196, 0.09) 0deg 0.7deg,
+    rgba(255, 255, 255, 0.05) 0deg 0.7deg,
     transparent 0.7deg 9deg
   );
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, transparent 62%);
@@ -329,8 +334,8 @@ a {
   line-height: 0.75;
   letter-spacing: -0.08em;
   text-transform: uppercase;
-  color: var(--violet);
-  opacity: 0.16;
+  color: var(--white);
+  opacity: 0.07;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -350,9 +355,10 @@ a {
 .hero-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(36px, 6.4vw, 72px);
-  line-height: 1.04;
-  letter-spacing: -0.045em;
+  font-size: clamp(40px, 7vw, 84px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
   margin: 18px 0 16px;
   max-width: 12ch;
 }
@@ -376,23 +382,17 @@ a {
   z-index: 1;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 24px;
+  border-radius: 0;
   padding: 18px 18px 22px;
   overflow: visible;
-  box-shadow:
-    0 1px 0 rgba(23, 20, 31, 0.04),
-    0 10px 24px -12px rgba(23, 20, 31, 0.22),
-    0 28px 56px -24px rgba(23, 20, 31, 0.28);
+  box-shadow: none;
   transition:
-    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.4s ease;
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .hero-visual:hover .hero-card {
   transform: translateY(-8px);
-  box-shadow:
-    0 12px 28px -10px rgba(109, 79, 196, 0.22),
-    0 36px 64px -20px rgba(23, 20, 31, 0.32);
+  box-shadow: none;
 }
 
 .hero-card-photo-wrap {
@@ -401,7 +401,7 @@ a {
 }
 
 .hero-card-photo-inner {
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   border: 2px solid var(--ink);
 }
@@ -599,7 +599,7 @@ a {
   font-weight: 600;
   line-height: 1;
   padding: 9px 14px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px solid var(--ink);
   background: var(--white);
   color: var(--ink);
@@ -612,8 +612,9 @@ a {
 
 .about-pill:hover,
 .about-pill.is-active {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
+  border-color: var(--accent);
 }
 
 .about-pill:hover {
@@ -653,7 +654,7 @@ a {
   font-weight: 600;
   font-size: 14px;
   padding: 12px 22px;
-  border-radius: 999px;
+  border-radius: 0;
   text-decoration: none;
   display: inline-block;
   border: 1.5px solid var(--ink);
@@ -662,6 +663,11 @@ a {
 
 .btn:hover {
   transform: translateY(-2px);
+}
+
+.btn-solid:hover {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .btn-solid {
@@ -675,8 +681,9 @@ a {
 }
 
 .btn-ghost:hover {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
+  border-color: var(--accent);
 }
 
 .btn.is-disabled {
@@ -696,7 +703,7 @@ a {
 .swatch {
   width: 20px;
   height: 20px;
-  border-radius: 6px;
+  border-radius: 0;
   border: 1px solid var(--line);
 }
 
@@ -739,9 +746,223 @@ a {
 
 .section-title {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 28px;
+  font-weight: 700;
+  font-size: clamp(34px, 5vw, 56px);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
   margin: 0;
+}
+
+/* --- Section surfaces: black / accent red --- */
+.section--dark,
+.hero.section--dark,
+.footer.section--dark {
+  --section-ink: #ffffff;
+  --section-ink-soft: rgba(255, 255, 255, 0.68);
+  --section-line: rgba(255, 255, 255, 0.16);
+  background: var(--black);
+  color: var(--section-ink);
+}
+
+.section--accent {
+  --section-ink: #ffffff;
+  --section-ink-soft: rgba(255, 255, 255, 0.82);
+  --section-line: rgba(255, 255, 255, 0.28);
+  background: var(--accent);
+  color: var(--section-ink);
+}
+
+.section--dark .section-title,
+.section--dark .about-title,
+.section--dark .about-block h3,
+.section--dark .about-block p,
+.section--dark .process-lede,
+.section--dark .process-desc,
+.section--dark .skill-nav-item,
+.section--dark .skill-index,
+.section--dark .hero-title,
+.section--dark .hero-sub,
+.section--dark .footer,
+.hero.section--dark .hero-title,
+.hero.section--dark .hero-sub {
+  color: var(--section-ink);
+}
+
+.section--dark .about-block p,
+.section--dark .process-desc,
+.section--dark .process-lede,
+.section--dark .hero-sub,
+.hero.section--dark .hero-sub {
+  color: var(--section-ink-soft);
+}
+
+.section--accent .section-title,
+.section--accent .contact-title,
+.section--accent .contact-sub,
+.section--accent .process-title {
+  color: var(--section-ink);
+}
+
+.section--accent .contact-sub,
+.section--accent .process-desc,
+.section--accent .process-lede {
+  color: var(--section-ink-soft);
+}
+
+.section--dark .about-backdrop {
+  color: var(--section-ink);
+  opacity: 0.08;
+}
+
+.hero.section--dark .hero-mark {
+  color: var(--section-ink);
+}
+
+.section--dark .process-title {
+  color: var(--section-ink);
+}
+
+/* White cards keep dark text inside colored sections */
+.hero-card,
+.tool-pill,
+.project-card,
+.project-folder-body,
+.skill-board,
+.project-modal {
+  --ink: #000000;
+  --ink-soft: #555555;
+  --line: rgba(0, 0, 0, 0.14);
+  color: var(--ink);
+}
+
+.section--dark .tag,
+.hero.section--dark .tag {
+  color: var(--section-ink);
+  background: transparent;
+  border-color: var(--section-line);
+}
+
+.section--accent .tag {
+  color: var(--section-ink);
+  background: transparent;
+  border-color: var(--section-line);
+}
+
+.section--dark .btn-ghost,
+.hero.section--dark .btn-ghost {
+  color: var(--section-ink);
+  border-color: var(--section-ink);
+}
+
+.section--dark .btn-ghost:hover,
+.hero.section--dark .btn-ghost:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.section--accent .btn-solid {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.section--accent .btn-solid:hover {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.section--accent .btn-ghost {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.section--accent .btn-ghost:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+.section--accent .tool-filter {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.section--accent .tool-filter:hover,
+.section--accent .tool-filter.is-active {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+.section--dark .process-track-line {
+  background: var(--section-line);
+}
+
+.section--dark .skill-nav-item {
+  border-color: var(--section-line);
+  color: var(--section-ink-soft);
+}
+
+.section--dark .skill-nav-item.is-active,
+.section--dark .skill-nav-item:hover {
+  color: var(--accent);
+}
+
+.section--accent .contact-frame {
+  background: var(--black);
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.section--accent .contact-frame .contact-title,
+.section--accent .contact-frame .contact-sub {
+  color: var(--white);
+}
+
+.section--accent .contact-frame .contact-sub {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.section--accent .contact-frame .btn-solid {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.section--accent .contact-frame .btn-solid:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.section--accent .contact-frame .btn-ghost {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.section--accent .contact-frame .btn-ghost:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.section--accent .project-more-btn {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.section--accent .project-more-btn:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+.footer.section--dark {
+  color: var(--section-ink-soft);
 }
 
 /* --- Full-page atmosphere (continued) --- */
@@ -857,7 +1078,7 @@ a {
   font-size: 14px;
   line-height: 1;
   padding: 11px 18px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px solid var(--ink);
   background: var(--white);
   color: var(--ink);
@@ -870,8 +1091,9 @@ a {
 
 .tool-filter:hover,
 .tool-filter.is-active {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
+  border-color: var(--accent);
 }
 
 .tool-filter:hover {
@@ -957,15 +1179,12 @@ a {
   padding: 18px 22px 16px;
   background: var(--white);
   border: 2px solid var(--ink);
-  border-radius: 20px;
+  border-radius: 0;
   text-decoration: none;
   color: var(--ink);
-  box-shadow:
-    4px 5px 0 0 rgba(23, 20, 31, 0.1),
-    0 12px 24px -16px rgba(23, 20, 31, 0.2);
+  box-shadow: none;
   transition:
     transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.35s ease,
     background 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease;
@@ -973,13 +1192,12 @@ a {
 
 .tool-pill:hover,
 .tool-pill:focus-visible {
-  transform: translateY(-8px) scale(1.05);
-  background: var(--lavender);
-  border-color: var(--ink);
+  transform: translateY(-4px);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
   outline: none;
-  box-shadow:
-    5px 8px 0 0 rgba(109, 79, 196, 0.22),
-    0 18px 32px -12px rgba(23, 20, 31, 0.28);
+  box-shadow: none;
 }
 
 .tool-pill-icon {
@@ -1006,7 +1224,7 @@ a {
 .tool-badge {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: 0;
   display: grid;
   place-items: center;
   font-family: var(--font-display);
@@ -1018,7 +1236,7 @@ a {
 .tool-monogram {
   width: 40px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: 0;
   background: var(--paper);
   border: 1.5px solid var(--line);
   display: grid;
@@ -1075,9 +1293,8 @@ a {
   place-items: center;
   aspect-ratio: 1;
   max-width: 220px;
-  border-radius: 22px;
-  background:
-    linear-gradient(160deg, var(--lavender) 0%, var(--pink) 55%, var(--yellow) 100%);
+  border-radius: 0;
+  background: var(--ink);
 }
 
 .process-visual-mark {
@@ -1085,7 +1302,7 @@ a {
   place-items: center;
   width: 64px;
   height: 64px;
-  border-radius: 16px;
+  border-radius: 0;
   background: var(--ink);
   color: var(--white);
   font-family: var(--font-display);
@@ -1100,7 +1317,7 @@ a {
   width: 36px;
   height: 36px;
   margin-bottom: 14px;
-  border-radius: 8px;
+  border-radius: 0;
   background: var(--ink);
   color: var(--white);
   font-family: var(--font-mono);
@@ -1163,7 +1380,7 @@ a {
   min-width: 44px;
   height: 32px;
   padding: 0 12px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px solid var(--ink);
   background: var(--white);
   color: var(--ink);
@@ -1179,8 +1396,9 @@ a {
 
 .process-dot:hover,
 .process-dot.is-active {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
+  border-color: var(--accent);
 }
 
 .process-dot:hover {
@@ -1244,7 +1462,7 @@ a {
   background: var(--folder-accent);
   border: 1px solid var(--line);
   border-bottom: 0;
-  border-radius: 10px 12px 0 0;
+  border-radius: 0;
 }
 
 .project-folder-tab::after {
@@ -1281,7 +1499,7 @@ a {
   right: 12px;
   bottom: 28%;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0;
   background: var(--paper);
 }
 
@@ -1346,10 +1564,10 @@ a {
   font-size: 10px;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--violet);
-  background: rgba(201, 182, 242, 0.28);
-  border: 1px solid rgba(109, 79, 196, 0.28);
-  border-radius: 999px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--ink);
+  border-radius: 0;
   padding: 4px 8px;
   transition:
     background 0.2s ease,
@@ -1359,9 +1577,9 @@ a {
 }
 
 .project-type-pill:hover {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
-  border-color: var(--ink);
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -1448,7 +1666,7 @@ a {
   width: 34px;
   height: 34px;
   padding: 0;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid var(--line);
   background: var(--white);
   color: var(--ink);
@@ -1461,9 +1679,9 @@ a {
 
 .project-modal-close:hover,
 .project-modal-close:focus-visible {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
-  border-color: var(--ink);
+  border-color: var(--accent);
 }
 
 .project-modal-close:focus-visible {
@@ -1473,7 +1691,7 @@ a {
 
 .project-modal-gallery {
   padding: 0;
-  background: rgba(252, 251, 250, 0.96);
+  background: var(--white);
   border-right: 0;
 }
 
@@ -1482,7 +1700,7 @@ a {
   top: 0;
   z-index: 1;
   padding: 22px;
-  background: rgba(252, 251, 250, 0.96);
+  background: var(--white);
 }
 
 .project-modal-shot {
@@ -1490,7 +1708,7 @@ a {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0;
   border: 0;
   background: var(--white);
 }
@@ -1514,7 +1732,7 @@ a {
   height: 54px;
   padding: 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0;
   border: 1.5px solid transparent;
   background: var(--white);
   cursor: pointer;
@@ -1613,10 +1831,10 @@ a {
   font-size: 12px;
   font-weight: 600;
   padding: 6px 11px;
-  border-radius: 999px;
-  border: 1px solid rgba(109, 79, 196, 0.28);
-  background: rgba(201, 182, 242, 0.28);
-  color: var(--violet);
+  border-radius: 0;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -1625,9 +1843,9 @@ a {
 }
 
 .project-modal-tools li:hover {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
-  border-color: var(--ink);
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -1645,7 +1863,7 @@ a {
   font-weight: 600;
   line-height: 1;
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid var(--ink);
   background: var(--white);
   color: var(--ink);
@@ -1658,8 +1876,9 @@ a {
 
 .project-modal-link-btn:hover,
 .project-modal-link-btn:focus-visible {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -1729,8 +1948,8 @@ a {
   top: 14px;
   bottom: 14px;
   width: 3px;
-  border-radius: 99px;
-  background: var(--ink);
+  border-radius: 0;
+  background: var(--accent);
   transform: scaleY(0);
   transform-origin: center;
   transition: transform 0.28s ease;
@@ -1738,7 +1957,7 @@ a {
 
 .skill-nav-item.is-active,
 .skill-nav-item:hover {
-  color: var(--ink);
+  color: var(--accent);
 }
 
 .skill-nav-item.is-active::before {
@@ -1779,7 +1998,7 @@ a {
   padding: 32px 32px 28px;
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 0;
   animation: skill-board-in 0.35s ease;
 }
 
@@ -1800,7 +2019,7 @@ a {
   width: 64px;
   height: 64px;
   margin-bottom: 20px;
-  border-radius: 16px;
+  border-radius: 0;
   background: var(--ink);
   color: var(--white);
 }
@@ -1863,7 +2082,7 @@ a {
   font-weight: 600;
   line-height: 1;
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1.5px solid var(--ink);
   background: var(--white);
   color: var(--ink);
@@ -1873,19 +2092,20 @@ a {
 }
 
 .skill-chip:hover {
-  background: var(--ink);
+  background: var(--accent);
   color: var(--white);
+  border-color: var(--accent);
 }
 
 /* --- Contact --- */
+.frame.contact-frame {
+  border: 1px solid var(--white);
+}
+
 .contact-frame {
   overflow: hidden;
-  background:
-    radial-gradient(circle at 86% 14%, rgba(201, 182, 242, 0.24), transparent 42%),
-    radial-gradient(circle at 8% 92%, rgba(246, 198, 216, 0.2), transparent 42%),
-    rgba(255, 255, 255, 0.9);
+  background: var(--black);
   padding: clamp(32px, 5vw, 54px);
-  backdrop-filter: blur(8px);
 }
 
 .contact-grid {
@@ -1904,18 +2124,20 @@ a {
 .contact-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(30px, 4.4vw, 46px);
+  font-size: clamp(34px, 5vw, 56px);
   line-height: 1.02;
   letter-spacing: -0.04em;
+  text-transform: uppercase;
   margin: 0 0 16px;
   max-width: 18ch;
+  color: var(--white);
 }
 
 .contact-sub {
   max-width: 46ch;
   font-size: 15px;
   line-height: 1.65;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0 0 26px;
 }
 
@@ -1954,7 +2176,8 @@ a {
   text-align: center;
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.55);
+  background: var(--black);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2129,7 +2352,7 @@ a {
   .skill-board {
     min-height: 0;
     padding: 24px 22px 22px;
-    border-radius: 20px;
+    border-radius: 0;
   }
 
   .process-stage {
@@ -2141,7 +2364,7 @@ a {
 
   .process-visual {
     max-width: 120px;
-    border-radius: 16px;
+    border-radius: 0;
   }
 
   .process-visual-mark {
@@ -2157,7 +2380,7 @@ a {
   .tool-pill {
     min-width: 112px;
     padding: 14px 16px 12px;
-    border-radius: 16px;
+    border-radius: 0;
   }
 
   .tool-pill h3 {
@@ -2222,4 +2445,309 @@ a {
   .nav-name {
     font-size: 15px;
   }
+}
+
+/* === Visual direction: black / red / white === */
+
+.page-atmosphere::before,
+.page-gradient,
+.page-orb,
+.page-glow {
+  display: none;
+}
+
+.page-grid {
+  opacity: 0.04;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.cursor-ring {
+  border-color: var(--ink);
+}
+
+.cursor.is-hover .cursor-ring {
+  background: rgba(191, 13, 3, 0.08);
+  border-color: var(--accent);
+}
+
+.tag {
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.tag-dot {
+  border-radius: 0;
+  background: var(--accent);
+}
+
+.frame,
+.frame::before,
+.frame::after,
+.frame .handle-tl,
+.frame .handle-tr {
+  border-radius: 0;
+}
+
+.frame::before,
+.frame::after,
+.frame .handle-tl,
+.frame .handle-tr {
+  background: var(--accent);
+}
+
+.nav-pill {
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+  background: var(--black);
+}
+
+.nav-logo {
+  border-radius: 0;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.hero-burst {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.05) 0deg 0.7deg,
+    transparent 0.7deg 9deg
+  );
+}
+
+.hero-mark {
+  color: var(--white);
+  opacity: 0.07;
+}
+
+.hero-title {
+  font-size: clamp(40px, 7vw, 84px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.hero-card {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero-visual:hover .hero-card {
+  box-shadow: none;
+}
+
+.hero-card-photo-inner {
+  border-radius: 0;
+}
+
+.section-title {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.about-title {
+  text-transform: uppercase;
+}
+
+.about-pill,
+.tool-filter,
+.btn,
+.process-dot,
+.skill-chip,
+.project-type-pill,
+.project-modal-tools li,
+.project-modal-link-btn,
+.project-more-btn,
+.tag {
+  border-radius: 0;
+}
+
+.about-pill:hover,
+.about-pill.is-active,
+.tool-filter:hover,
+.tool-filter.is-active,
+.process-dot:hover,
+.process-dot.is-active,
+.skill-chip:hover,
+.project-type-pill:hover,
+.project-modal-tools li:hover,
+.project-modal-link-btn:hover,
+.project-modal-close:hover,
+.project-modal-close:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.btn-solid:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-ghost:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.about-pill:focus-visible,
+.tool-filter:focus-visible,
+.process-dot:focus-visible,
+.btn:focus-visible,
+.project-modal-close:focus-visible,
+.project-modal-link-btn:focus-visible,
+.skill-nav-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tool-pill {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.tool-pill:hover,
+.tool-pill:focus-visible {
+  transform: translateY(-4px);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  box-shadow: none;
+}
+
+.tool-pill:hover .tool-pill-icon,
+.tool-pill:focus-visible .tool-pill-icon {
+  transform: none;
+}
+
+.tool-monogram,
+.tool-badge {
+  border-radius: 0;
+}
+
+.tool-monogram {
+  color: var(--ink);
+}
+
+.process-visual {
+  border-radius: 0;
+  background: var(--ink);
+}
+
+.process-visual-mark,
+.process-badge {
+  border-radius: 0;
+}
+
+.process-track-progress {
+  background: var(--accent);
+}
+
+.skill-nav-item::before {
+  border-radius: 0;
+  background: var(--accent);
+}
+
+.skill-nav-item.is-active,
+.skill-nav-item:hover {
+  color: var(--accent);
+}
+
+.skill-board {
+  border-radius: 0;
+  border: 1px solid var(--ink);
+}
+
+.skill-board-icon {
+  border-radius: 0;
+  background: var(--ink);
+}
+
+.skill-practice li::before {
+  border-radius: 0;
+  background: var(--accent);
+}
+
+.project-folder-tab {
+  border-radius: 0;
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.project-folder-body {
+  border-radius: 0;
+  border: 1px solid var(--ink);
+  box-shadow: none;
+}
+
+.project-card:hover .project-folder-body,
+.project-card:focus-visible .project-folder-body {
+  box-shadow: none;
+}
+
+.project-folder-peek {
+  border-radius: 0;
+}
+
+.project-card:focus-visible .project-folder-body {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-type-pill {
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--ink);
+}
+
+.project-modal-root {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.project-modal {
+  border-radius: 0;
+  border: 1px solid var(--ink);
+  box-shadow: none;
+}
+
+.project-modal-close {
+  border-radius: 0;
+}
+
+.project-modal-shot,
+.project-modal-thumb {
+  border-radius: 0;
+}
+
+.project-modal-tools li {
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--ink);
+}
+
+.project-modal-title {
+  font-size: clamp(28px, 3.5vw, 40px);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+.process-title {
+  text-transform: uppercase;
+}
+
+.hero-card-name,
+.skill-board-title {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
