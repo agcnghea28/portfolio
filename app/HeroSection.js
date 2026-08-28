@@ -37,8 +37,18 @@ export default function HeroSection() {
     <header className="hero section--dark" id="home" ref={ref}>
       <div className="hero-atmosphere" aria-hidden="true">
         <span className="hero-glow hero-glow-a" />
-        <span className="hero-glow hero-glow-b" />
-        <span className="hero-join" />
+        <span className="hero-field" />
+        <span className="hero-speck is-1" />
+        <span className="hero-speck is-2" />
+        <span className="hero-speck is-3" />
+        <span className="hero-speck is-4" />
+        <span className="hero-speck is-5" />
+        <span className="hero-speck is-6" />
+        <span className="hero-speck is-7" />
+        <span className="hero-speck is-8" />
+        <span className="hero-orbit" />
+        <span className="hero-orbit is-low" />
+        <span className="hero-scan" />
         <span className="hero-tick is-tl" />
         <span className="hero-tick is-tr" />
       </div>
@@ -55,7 +65,7 @@ export default function HeroSection() {
               I <span className="hero-accent">design</span> and
             </span>
             <span className="hero-title-line">
-              <span className="hero-accent">build</span> interfaces.
+              <span className="hero-accent hero-accent-build">build</span> interfaces.
             </span>
           </span>
           <span className="hero-title-mobile">
@@ -63,7 +73,7 @@ export default function HeroSection() {
               I <span className="hero-accent">design</span>
             </span>
             <span className="hero-title-line">
-              and <span className="hero-accent">build</span>
+              and <span className="hero-accent hero-accent-build">build</span>
             </span>
             <span className="hero-title-line">interfaces.</span>
           </span>

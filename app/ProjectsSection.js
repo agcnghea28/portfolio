@@ -203,6 +203,15 @@ export default function ProjectsSection() {
                 aria-modal="true"
                 aria-labelledby={dialogId}
               >
+                <div className="project-modal-atmosphere" aria-hidden="true">
+                  <span className="project-modal-glow is-a" />
+                  <span className="project-modal-glow is-b" />
+                  <span className="project-modal-tick is-tl" />
+                  <span className="project-modal-tick is-tr" />
+                  <span className="project-modal-tick is-bl" />
+                  <span className="project-modal-tick is-br" />
+                </div>
+
                 <button
                   ref={closeRef}
                   type="button"
@@ -221,6 +230,7 @@ export default function ProjectsSection() {
                   </svg>
                 </button>
 
+                <div className="project-modal-scroll">
                 <div className="project-modal-gallery">
                   <div className="project-modal-gallery-sticky">
                     {shots[shotIndex] ? (
@@ -314,7 +324,7 @@ export default function ProjectsSection() {
                         ) : null}
                         {active.liveUrl ? (
                           <a
-                            className="project-modal-link-btn"
+                            className="project-modal-link-btn is-solid"
                             href={active.liveUrl}
                             target="_blank"
                             rel="noreferrer"
@@ -330,6 +340,7 @@ export default function ProjectsSection() {
                     The live site may differ from the version shown in the mock-up. Some designs
                     have since been updated or modified by the client after my involvement.
                   </p>
+                </div>
                 </div>
               </div>
             </div>,

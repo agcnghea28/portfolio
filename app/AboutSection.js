@@ -44,7 +44,24 @@ export default function AboutSection() {
 
         <div className="about-content">
           <div className="about-heading">
-            <h2 className="about-title">About ME</h2>
+            <h2 className="about-title">
+              <span className="about-title-line">Hello!</span>
+              <span className="about-title-line">
+                I&apos;m Ghea
+                <svg
+                  className="about-title-icon"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  height="1em"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 1.2 13.8 9.4 22 12 13.8 14.6 12 22.8 10.2 14.6 2 12l8.2-2.6L12 1.2Z"
+                  />
+                </svg>
+              </span>
+            </h2>
           </div>
 
           <div className="about-copy">

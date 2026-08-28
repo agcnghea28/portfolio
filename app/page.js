@@ -5,6 +5,7 @@ import ProcessSection from "./ProcessSection";
 import ProjectsSection from "./ProjectsSection";
 import Reveal from "./Reveal";
 import SectionAtmosphere from "./SectionAtmosphere";
+import SectionObserve from "./SectionObserve";
 import SiteHeader from "./SiteHeader";
 import SkillsAccordion from "./SkillsAccordion";
 import ToolsGrid from "./ToolsGrid";
@@ -12,12 +13,13 @@ import ToolsGrid from "./ToolsGrid";
 export default function Home() {
   return (
     <>
+      <SectionObserve />
       <SiteHeader />
 
       <HeroSection />
 
       <section className="section section--dark about-section" id="about">
-        <SectionAtmosphere label="About" panel mark="right" />
+        <SectionAtmosphere label="About" mark="right" />
         <div className="wrap">
           <Reveal>
             <AboutSection />
@@ -45,7 +47,9 @@ export default function Home() {
           <Reveal className="section-head">
             <h2 className="section-title">Projects</h2>
           </Reveal>
-          <ProjectsSection />
+          <Reveal>
+            <ProjectsSection />
+          </Reveal>
         </div>
       </section>
 

@@ -56,7 +56,7 @@ export const skills = [
     number: "06",
     title: "AI-Assisted Workflows",
     summary:
-      "I use AI to move faster from design to code and support site building, troubleshooting, and iteration—without treating the tools as a substitute for design or development judgment.",
+      "I use AI to speed up my workflow, from design to code, and to help with site building, troubleshooting, and iterations. I still rely on my own design and development judgment to make the final decisions.",
     tools: ["Claude", "ChatGPT", "Cursor"],
   },
 ];
