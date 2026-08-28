@@ -38,10 +38,9 @@ export default function HeroSection() {
       <div className="hero-atmosphere" aria-hidden="true">
         <span className="hero-glow hero-glow-a" />
         <span className="hero-glow hero-glow-b" />
+        <span className="hero-join" />
         <span className="hero-tick is-tl" />
         <span className="hero-tick is-tr" />
-        <span className="hero-tick is-bl" />
-        <span className="hero-tick is-br" />
       </div>
 
       <div className="wrap hero-inner">
