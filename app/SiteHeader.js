@@ -75,7 +75,7 @@ export default function SiteHeader() {
           </button>
           <a
             className="nav-cv"
-            href="/cv.pdf"
+            href="https://canva.link/agcang-cv"
             target="_blank"
             rel="noreferrer"
           >
