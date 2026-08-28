@@ -411,47 +411,99 @@ a {
   background: var(--black);
   --hx: 0px;
   --hy: 0px;
-  --ha: 0deg;
 }
 
-.hero-burst {
+.hero-atmosphere {
   position: absolute;
-  left: 50%;
-  top: 46%;
+  inset: 0;
   z-index: 0;
-  width: min(120vw, 920px);
-  height: min(120vw, 920px);
-  transform: translate(-50%, -50%) rotate(var(--ha));
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(255, 255, 255, 0.05) 0deg 0.7deg,
-    transparent 0.7deg 9deg
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  transform: translate(var(--hx), var(--hy));
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-glow-a {
+  top: -18%;
+  right: -18%;
+  width: min(46vw, 460px);
+  height: min(46vw, 460px);
+  background: radial-gradient(
+    circle,
+    rgba(191, 13, 3, 0.16) 0%,
+    rgba(191, 13, 3, 0.04) 46%,
+    transparent 72%
   );
-  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, transparent 62%);
-  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, transparent 62%);
-  pointer-events: none;
-  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.hero-mark {
+.hero-glow-b {
+  bottom: -28%;
+  left: -20%;
+  width: min(54vw, 520px);
+  height: min(40vw, 400px);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 70%
+  );
+}
+
+.hero-tick {
   position: absolute;
+  width: 22px;
+  height: 22px;
+}
+
+.hero-tick::before,
+.hero-tick::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-tick::before {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+}
+
+.hero-tick::after {
+  top: 0;
+  bottom: 0;
   left: 50%;
-  top: 44%;
-  z-index: 0;
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(96px, 22vw, 280px);
-  font-weight: 700;
-  line-height: 0.75;
-  letter-spacing: -0.08em;
-  text-transform: uppercase;
-  color: var(--white);
-  opacity: 0.07;
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  transform: translate(calc(-50% + var(--hx)), calc(-50% + var(--hy)));
-  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  width: 1px;
+}
+
+.hero-tick.is-tl {
+  top: clamp(88px, 10vw, 112px);
+  left: clamp(16px, 3.5vw, 40px);
+}
+
+.hero-tick.is-tr {
+  top: clamp(88px, 10vw, 112px);
+  right: clamp(16px, 3.5vw, 40px);
+}
+
+.hero-tick.is-bl {
+  bottom: clamp(28px, 5vw, 48px);
+  left: clamp(16px, 3.5vw, 40px);
+}
+
+.hero-tick.is-br {
+  bottom: clamp(28px, 5vw, 48px);
+  right: clamp(16px, 3.5vw, 40px);
+}
+
+.hero-tick.is-tr::before,
+.hero-tick.is-bl::after {
+  background: rgba(191, 13, 3, 0.38);
 }
 
 .hero-inner {
@@ -1156,10 +1208,6 @@ a {
 .section--accent .process-desc,
 .section--accent .process-lede {
   color: var(--section-ink-soft);
-}
-
-.hero.section--dark .hero-mark {
-  color: var(--section-ink);
 }
 
 .section--dark .process-title,
@@ -2736,8 +2784,8 @@ a {
     opacity: 0 !important;
   }
 
-  .hero-burst,
-  .hero-mark,
+  .hero-atmosphere,
+  .hero-glow,
   .section-atmosphere,
   .section-atmosphere-mark,
   .section-atmosphere-panel {
@@ -2864,6 +2912,16 @@ a {
     --section-pad-y: clamp(96px, 14vw, 128px);
     min-height: 0;
     padding: calc(68px + var(--section-pad-y)) 0 64px;
+  }
+
+  .hero-glow-a,
+  .hero-glow-b {
+    opacity: 0.7;
+  }
+
+  .hero-tick {
+    width: 16px;
+    height: 16px;
   }
 
   .hero-title {
@@ -3128,19 +3186,6 @@ a {
 .frame .handle-tl,
 .frame .handle-tr {
   background: var(--accent);
-}
-
-.hero-burst {
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(255, 255, 255, 0.05) 0deg 0.7deg,
-    transparent 0.7deg 9deg
-  );
-}
-
-.hero-mark {
-  color: var(--white);
-  opacity: 0.07;
 }
 
 .hero-title {

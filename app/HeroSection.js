@@ -16,15 +16,13 @@ export default function HeroSection() {
       const rect = node.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
       const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-      node.style.setProperty("--hx", `${(x * 32).toFixed(1)}px`);
-      node.style.setProperty("--hy", `${(y * 20).toFixed(1)}px`);
-      node.style.setProperty("--ha", `${(x * 12).toFixed(2)}deg`);
+      node.style.setProperty("--hx", `${(x * 14).toFixed(1)}px`);
+      node.style.setProperty("--hy", `${(y * 10).toFixed(1)}px`);
     };
 
     const onLeave = () => {
       node.style.setProperty("--hx", "0px");
       node.style.setProperty("--hy", "0px");
-      node.style.setProperty("--ha", "0deg");
     };
 
     node.addEventListener("pointermove", onMove);
@@ -37,10 +35,14 @@ export default function HeroSection() {
 
   return (
     <header className="hero section--dark" id="home" ref={ref}>
-      <div className="hero-burst" aria-hidden="true" />
-      <p className="hero-mark" aria-hidden="true">
-        Ghea
-      </p>
+      <div className="hero-atmosphere" aria-hidden="true">
+        <span className="hero-glow hero-glow-a" />
+        <span className="hero-glow hero-glow-b" />
+        <span className="hero-tick is-tl" />
+        <span className="hero-tick is-tr" />
+        <span className="hero-tick is-bl" />
+        <span className="hero-tick is-br" />
+      </div>
 
       <div className="wrap hero-inner">
         <span className="hero-roles hero-item" style={{ "--d": "0.08s" }}>
