@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { scrollToSection } from "./scrollToSection";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -83,7 +84,17 @@ export default function HeroSection() {
           the designs to life.
         </p>
         <div className="hero-cta hero-item" style={{ "--d": "0.4s" }}>
-          <a className="btn btn-solid" href="#projects">View projects</a>
+          <a
+            className="btn btn-solid"
+            href="#projects"
+            onClick={(event) => {
+              event.preventDefault();
+              scrollToSection("projects");
+              window.history.replaceState(null, "", "#projects");
+            }}
+          >
+            View projects
+          </a>
           <a className="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { scrollToSection } from "./scrollToSection";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -49,19 +50,41 @@ export default function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return undefined;
+
+    const frame = window.requestAnimationFrame(() => scrollToSection(id));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
   const navClass = `nav${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`;
+
+  function onSectionLink(event, href) {
+    const id = href.startsWith("#") ? href.slice(1) : "";
+    if (!id || !document.getElementById(id)) return;
+
+    event.preventDefault();
+    setOpen(false);
+    scrollToSection(id);
+    window.history.replaceState(null, "", href);
+  }
 
   return (
     <nav className={navClass} aria-label="Primary">
       <div className="wrap nav-inner">
-        <a className="nav-brand" href="#home" onClick={() => setOpen(false)}>
+        <a
+          className="nav-brand"
+          href="#home"
+          onClick={(event) => onSectionLink(event, "#home")}
+        >
           GHEA.
         </a>
 
         <ul className="nav-links" id="site-nav-links">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} onClick={() => setOpen(false)}>
+              <a href={link.href} onClick={(event) => onSectionLink(event, link.href)}>
                 {link.label}
               </a>
             </li>
