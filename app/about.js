@@ -4,44 +4,42 @@ export const about = {
       src: "/ghea-avatar.png",
       alt: "Ghea Agcang",
       width: 400,
-      height: 320,
+      height: 500,
     },
-    name: "Ghea Agcang",
-    location: "Philippines",
-    comment: "Thank you so much for showing interest and for viewing my portfolio!",
   },
-  who: {
-    title: "Who am I?",
-    body: "Placeholder — a short introduction about who I am as a designer and website builder, and the kind of work I enjoy taking from idea to a live site.",
-  },
-  approach: {
-    title: "My Approach",
-    items: [
-      {
-        id: "user-focused",
-        label: "User-focused",
-        body: "Placeholder — start with the people using the product, not just how the screen looks.",
-      },
-      {
-        id: "intentional",
-        label: "Clean & intentional",
-        body: "Placeholder — keep layouts simple, typography clear, and every element there for a reason.",
-      },
-      {
-        id: "responsive",
-        label: "Responsive",
-        body: "Placeholder — design so the experience still feels considered on smaller screens.",
-      },
-      {
-        id: "consistent",
-        label: "Consistent",
-        body: "Placeholder — reuse patterns, spacing, and components so the product feels like one system.",
-      },
-      {
-        id: "detail-oriented",
-        label: "Detail-oriented",
-        body: "Placeholder — check alignment, states, and the small moments that make a site feel finished.",
-      },
+  collage: [
+    {
+      id: "badminton",
+      src: "/about/badminton-hq.jpg",
+      alt: "Ghea on a badminton court",
+      slot: "left",
+    },
+    {
+      id: "concert",
+      src: "/about/concert.jpg",
+      alt: "Ghea at a concert",
+      slot: "mid-top",
+    },
+    {
+      id: "portrait",
+      src: "/ghea-avatar.png",
+      alt: "Ghea Agcang",
+      slot: "mid-bot",
+    },
+    {
+      id: "sunset",
+      src: "/about/sunset.jpg",
+      alt: "Ghea by the sea at sunset",
+      slot: "right",
+    },
+  ],
+  intro:
+    "I'm a UI/UX designer and web developer based in Cebu, Philippines. I love turning ideas into websites that actually work and look good doing it. I handle the whole process myself, from wireframes and prototypes in Figma to building and launching the final site, so nothing gets lost along the way.",
+  drives: {
+    title: "What Drives Me",
+    body: [
+      "I love the moment a design becomes real. Something you can click, scroll through, and actually use.",
+      "What excites me most is the problem-solving part, figuring out how a layout should flow, then figuring out how to build it properly. I like working with a mix of tools, from Figma to newer AI-assisted workflows, because it keeps me learning better and faster ways to bring ideas to life.",
     ],
   },
 };

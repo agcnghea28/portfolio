@@ -78,22 +78,23 @@ export default function SkillsAccordion() {
           aria-labelledby={`skill-tab-${active.id}`}
           key={active.id}
         >
-          <div className="skill-board-icon" aria-hidden="true">
-            <SkillIcon id={active.id} />
+          <div className="skill-board-top">
+            <div className="skill-board-icon" aria-hidden="true">
+              <SkillIcon id={active.id} />
+            </div>
+            <h3 className="skill-board-title">{active.title}</h3>
+            <p className="skill-summary">{active.summary}</p>
           </div>
-          <h3 className="skill-board-title">{active.title}</h3>
-          <p className="skill-summary">{active.summary}</p>
-          <ul className="skill-practice">
-            {active.practice.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
-          <div className="skill-chips" aria-label={`Tools used for ${active.title}`}>
-            {active.tools.map((tool) => (
-              <span key={tool} className="skill-chip">
-                {tool}
-              </span>
-            ))}
+
+          <div className="skill-board-bottom">
+            <p className="skill-tools-label">Tools</p>
+            <div className="skill-chips" aria-label={`Tools used for ${active.title}`}>
+              {active.tools.map((tool) => (
+                <span key={tool} className="skill-chip">
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       )}

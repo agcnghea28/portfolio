@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Reveal from "./Reveal";
 import ToolIcon from "./ToolIcon";
 import { toolCategories, tools } from "./tools";
 
@@ -80,23 +81,26 @@ export default function ToolsGrid() {
   return (
     <>
       <div className="wrap">
-        <div className="tool-filters" role="tablist" aria-label="Tool categories">
-          {toolCategories.map((category) => {
-            const isActive = category === active;
-            return (
-              <button
-                key={category}
-                type="button"
-                role="tab"
-                className={`tool-filter${isActive ? " is-active" : ""}`}
-                aria-selected={isActive}
-                onClick={() => setActive(category)}
-              >
-                {category}
-              </button>
-            );
-          })}
-        </div>
+        <Reveal className="tools-head">
+          <h2 className="section-title tools-head-title">Tools I work with</h2>
+          <div className="tool-filters" role="tablist" aria-label="Tool categories">
+            {toolCategories.map((category) => {
+              const isActive = category === active;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  role="tab"
+                  className={`tool-filter${isActive ? " is-active" : ""}`}
+                  aria-selected={isActive}
+                  onClick={() => setActive(category)}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
       </div>
 
       <div className="tool-marquee-wrap" key={active}>

@@ -1,74 +1,62 @@
 export const skills = [
   {
-    id: "ux-research",
+    id: "ui-ux-design",
     number: "01",
-    title: "UX research",
+    title: "UI/UX & Design",
     summary:
-      "I use research and validation so designs are checked against real use, not just visual preference.",
-    practice: [
-      "Design research to inform mockups, flows, and website decisions.",
-      "User acceptance testing on an attendance-system UI during an internship.",
-    ],
-    tools: ["Figma", "Balsamiq", "Notion"],
+      "I design user-focused interfaces, wireframes, and prototypes with a focus on clarity, consistency, and responsive experiences.",
+    tools: ["Figma", "Balsamiq", "Google Stitch", "Visily", "Canva", "Photoshop", "Illustrator"],
   },
   {
-    id: "wireframing",
+    id: "ai-tools",
     number: "02",
-    title: "Wireframing & prototyping",
+    title: "AI Tools & Platforms",
     summary:
-      "I map screens from low-fidelity structure to clickable prototypes before a site is built.",
-    practice: [
-      "Mockups, wireframes, and prototypes for live website work.",
-      "Flows in Figma and Balsamiq, from rough layout to a shareable prototype.",
-    ],
-    tools: ["Figma", "Balsamiq", "Visily"],
+      "I use AI tools to explore ideas, support design and development tasks, troubleshoot problems, and improve my overall workflow.",
+    tools: ["ChatGPT", "Claude", "Gemini", "Cursor", "Composio", "Midjourney", "Firefly"],
   },
   {
-    id: "visual-ui",
+    id: "web-dev-automation",
     number: "03",
-    title: "Visual & UI design",
+    title: "Web Development & Automation",
     summary:
-      "I design interface visuals and supporting assets so a product looks consistent from mockup to live page.",
-    practice: [
-      "UI visuals for websites, plus illustration and logo work.",
-      "Social and brand imagery for internal and client-facing content.",
+      "I turn designs into functional websites and work with CMS, development, deployment, and automation tools to build and maintain web experiences.",
+    tools: [
+      "WordPress",
+      "Elementor",
+      "Divi",
+      "Payload",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "GitHub",
+      "Vercel",
+      "Make",
+      "Mailchimp",
     ],
-    tools: ["Figma", "Photoshop", "Illustrator", "Canva"],
   },
   {
-    id: "website-builds",
+    id: "project-management",
     number: "04",
-    title: "Website builds",
+    title: "Project Management & Collaboration",
     summary:
-      "I translate designs into live WordPress sites and help keep them working after launch.",
-    practice: [
-      "Building and editing sites with Elementor and Divi.",
-      "Troubleshooting layout and technical issues on live websites.",
-    ],
-    tools: ["WordPress", "Elementor", "Divi", "Payload"],
+      "I use project management and collaboration tools to organize tasks, communicate with teams, track progress, and keep projects moving efficiently.",
+    tools: ["Asana", "Notion", "Trello", "Teams", "Loop", "Outlook"],
   },
   {
-    id: "frontend",
+    id: "productivity",
     number: "05",
-    title: "Frontend fundamentals",
+    title: "Productivity",
     summary:
-      "I use HTML, CSS, and JavaScript to implement interfaces and fix what the visual builder cannot.",
-    practice: [
-      "Turning layouts into working pages on client sites.",
-      "Hands-on markup and styling when a design needs a custom adjustment.",
-    ],
-    tools: ["HTML", "CSS", "JavaScript"],
+      "I use productivity tools to organize information, manage documents, communicate, and support day-to-day project work.",
+    tools: ["Office", "Google Workspace"],
   },
   {
     id: "ai-workflows",
     number: "06",
-    title: "AI-assisted workflows",
+    title: "AI-Assisted Workflows",
     summary:
-      "I use AI to move faster from design to code and to support site building, without treating the tools as a substitute for craft.",
-    practice: [
-      "Claude, ChatGPT, Gemini, and Cursor for design-to-code and writing assistance.",
-      "Make and Composio where they help with automation around CMS and delivery work.",
-    ],
-    tools: ["Claude", "ChatGPT", "Cursor", "Make"],
+      "I use AI to move faster from design to code and support site building, troubleshooting, and iteration—without treating the tools as a substitute for design or development judgment.",
+    tools: ["Claude", "ChatGPT", "Cursor"],
   },
 ];

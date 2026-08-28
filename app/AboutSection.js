@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { about } from "./about";
-import ProfileCard from "./ProfileCard";
+import AboutCollage from "./AboutCollage";
 
 export default function AboutSection() {
-  const [activeId, setActiveId] = useState(about.approach.items[0]?.id ?? null);
   const stageRef = useRef(null);
-  const active =
-    about.approach.items.find((item) => item.id === activeId) ??
-    about.approach.items[0];
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -22,15 +18,11 @@ export default function AboutSection() {
       const rect = stage.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
       const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-      stage.style.setProperty("--about-tilt-x", `${(x * 14).toFixed(2)}px`);
-      stage.style.setProperty("--about-tilt-y", `${(y * 10).toFixed(2)}px`);
       stage.style.setProperty("--about-photo-x", `${(x * 8).toFixed(2)}px`);
       stage.style.setProperty("--about-photo-y", `${(y * 6).toFixed(2)}px`);
     };
 
     const onLeave = () => {
-      stage.style.setProperty("--about-tilt-x", "0px");
-      stage.style.setProperty("--about-tilt-y", "0px");
       stage.style.setProperty("--about-photo-x", "0px");
       stage.style.setProperty("--about-photo-y", "0px");
     };
@@ -46,12 +38,8 @@ export default function AboutSection() {
   return (
     <div className="about" ref={stageRef}>
       <div className="about-grid">
-        <p className="about-backdrop" aria-hidden="true">
-          About ME
-        </p>
-
         <div className="about-visual">
-          <ProfileCard />
+          <AboutCollage />
         </div>
 
         <div className="about-content">
@@ -61,35 +49,16 @@ export default function AboutSection() {
 
           <div className="about-copy">
             <article className="about-block">
-              <h3>{about.who.title}</h3>
-              <p>{about.who.body}</p>
+              <p>{about.intro}</p>
             </article>
 
+            <hr className="about-divider" />
+
             <article className="about-block">
-              <h3>{about.approach.title}</h3>
-              <div className="about-pills" role="group" aria-label="Approach ideas">
-                {about.approach.items.map((item) => {
-                  const isActive = item.id === activeId;
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      className={`about-pill${isActive ? " is-active" : ""}`}
-                      aria-pressed={isActive}
-                      onMouseEnter={() => setActiveId(item.id)}
-                      onFocus={() => setActiveId(item.id)}
-                      onClick={() => setActiveId(item.id)}
-                    >
-                      {item.label}
-                    </button>
-                  );
-                })}
-              </div>
-              {active && (
-                <p className="about-approach-body" key={active.id}>
-                  {active.body}
-                </p>
-              )}
+              <h3>{about.drives.title}</h3>
+              {about.drives.body.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+              ))}
             </article>
           </div>
         </div>

@@ -36,24 +36,40 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <header className="hero section--dark" ref={ref}>
+    <header className="hero section--dark" id="home" ref={ref}>
       <div className="hero-burst" aria-hidden="true" />
       <p className="hero-mark" aria-hidden="true">
         Ghea
       </p>
 
       <div className="wrap hero-inner">
-        <span className="tag hero-item" style={{ "--d": "0.08s" }}>
-          UI/UX Designer · Website Developer
+        <span className="hero-roles hero-item" style={{ "--d": "0.08s" }}>
+          UI/UX Designer
+          <span className="hero-roles-divider" aria-hidden="true" />
+          Website Developer
         </span>
         <h1 className="hero-title hero-item" style={{ "--d": "0.18s" }}>
-          I design and build
-          <br />
-          interfaces.
+          <span className="hero-title-desktop">
+            <span className="hero-title-line">
+              I <span className="hero-accent">design</span> and
+            </span>
+            <span className="hero-title-line">
+              <span className="hero-accent">build</span> interfaces.
+            </span>
+          </span>
+          <span className="hero-title-mobile">
+            <span className="hero-title-line">
+              I <span className="hero-accent">design</span>
+            </span>
+            <span className="hero-title-line">
+              and <span className="hero-accent">build</span>
+            </span>
+            <span className="hero-title-line">interfaces.</span>
+          </span>
         </h1>
         <p className="hero-sub hero-item" style={{ "--d": "0.3s" }}>
-          From research and wireframes in Figma to shipped, working websites —
-          moving between the design tool and the code editor.
+          From research and wireframes in Figma to building the website and bringing
+          the designs to life.
         </p>
         <div className="hero-cta hero-item" style={{ "--d": "0.4s" }}>
           <a className="btn btn-solid" href="#projects">View projects</a>
