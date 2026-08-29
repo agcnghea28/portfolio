@@ -26,6 +26,7 @@ export const skills = [
       "Elementor",
       "Divi",
       "Payload",
+      "The Web Console",
       "HTML",
       "CSS",
       "JavaScript",

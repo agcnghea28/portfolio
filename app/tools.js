@@ -23,6 +23,7 @@ export const tools = [
   { name: "Elementor", href: "https://elementor.com", slug: "elementor", category: "Development" },
   { name: "Divi", href: "https://www.elegantthemes.com/gallery/divi/", slug: null, category: "Development" },
   { name: "Payload", href: "https://payloadcms.com", slug: "payloadcms", category: "Development" },
+  { name: "The Web Console", href: "https://www.thewebconsole.com", slug: null, category: "Development" },
   { name: "GitHub", href: "https://github.com", slug: "github", category: "Development" },
   { name: "Vercel", href: "https://vercel.com", slug: "vercel", category: "Development" },
   { name: "Claude", href: "https://claude.ai", slug: null, category: "AI & Automation" },
