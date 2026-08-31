@@ -59,35 +59,12 @@ function IconApps() {
   );
 }
 
-function IconFlow() {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <path
-        d="M16 18a10 10 0 0 1 16 0"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-      />
-      <path d="M30 14.5 32.5 18.5 27 19" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      <path
-        d="M32 30a10 10 0 0 1-16 0"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-      />
-      <path d="M18 33.5 15.5 29.5 21 29" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="24" cy="24" r="3.5" stroke="currentColor" strokeWidth="2.2" />
-    </svg>
-  );
-}
-
 const icons = {
   "ui-ux-design": IconLayers,
   "ai-tools": IconSpark,
   "web-dev-automation": IconWindow,
   "project-management": IconKanban,
   productivity: IconApps,
-  "ai-workflows": IconFlow,
 };
 
 export default function SkillIcon({ id }) {

@@ -93,13 +93,16 @@ export default function SiteHeader() {
 
         <div className="nav-end">
           <button
-            className="nav-toggle"
+            className={`nav-toggle${open ? " is-open" : ""}`}
             type="button"
             aria-expanded={open}
             aria-controls="site-nav-links"
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((value) => !value)}
           >
-            {open ? "Close" : "Menu"}
+            <span className="nav-toggle-bar" />
+            <span className="nav-toggle-bar" />
+            <span className="nav-toggle-bar" />
           </button>
           <a
             className="nav-cv"

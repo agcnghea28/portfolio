@@ -12,7 +12,7 @@ export const skills = [
     number: "02",
     title: "AI Tools & Platforms",
     summary:
-      "I use AI tools to explore ideas, support design and development tasks, troubleshoot problems, and improve my overall workflow.",
+      "I use AI to speed up my workflow, from design to code, to help with site building, troubleshooting, and iterations. However, there are times when I still rely on my own design and development judgment to make the final call.",
     tools: ["ChatGPT", "Claude", "Gemini", "Cursor", "Composio", "Midjourney", "Firefly"],
   },
   {
@@ -51,13 +51,5 @@ export const skills = [
     summary:
       "I use productivity tools to organize information, manage documents, communicate, and support day-to-day project work.",
     tools: ["Office", "Google Workspace"],
-  },
-  {
-    id: "ai-workflows",
-    number: "06",
-    title: "AI-Assisted Workflows",
-    summary:
-      "I use AI to speed up my workflow, from design to code, and to help with site building, troubleshooting, and iterations. I still rely on my own design and development judgment to make the final decisions.",
-    tools: ["Claude", "ChatGPT", "Cursor"],
   },
 ];
