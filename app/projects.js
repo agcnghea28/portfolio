@@ -293,10 +293,31 @@ export const projects = [
       "https://www.figma.com/design/cFdzqK185z8JCuk4OwVzpO/Work-Projects-2?node-id=2006-857&t=03ZXPDeSgjVLA2kP-1",
     liveUrl: "https://edgysport.com/",
     summary:
-      "Edgy Sport is a custom sportswear brand providing customizable team apparel and uniforms. The project involved collaboratively redesigning and implementing key pages of the website to improve product presentation, communicate its customization services, and create a clearer shopping experience. The site also integrates a third-party 3D kit builder for custom uniform design.",
+      "Edgy Sport is a custom sportswear brand providing customizable team apparel and uniforms. The project involved collaboratively redesigning and implementing key pages of the website to improve product presentation, communicate its customization services, and create a clearer shopping experience. The site also integrates a third-party 3D Kit Builder for custom uniform design.",
+    challenge:
+      "The website needed to present Edgy Sport's custom sportswear offering more clearly while providing a smoother path from browsing products to exploring customization options. The redesign also needed to incorporate the third-party 3D Kit Builder into the overall shopping experience.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Collaborated on the redesign and implementation of key website pages, contributing to UI/UX design and integrating the third-party 3D Kit Builder into the website.",
+      "Collaborated on the redesign and implementation of key website pages, contributing to UI/UX design and integrating the third-party 3D Kit Builder into the website. My work focused on improving page layouts, product presentation, and the connection between the main website experience and the customization tool.",
+    decisions: [
+      {
+        title: "Product Presentation",
+        text: "Refined key page layouts and product presentation to make Edgy Sport's sportswear and customization options easier to understand and explore.",
+      },
+      {
+        title: "Customization Experience",
+        text: "Integrated the third-party 3D Kit Builder into the website to provide users with a more interactive way to explore and create custom uniform designs.",
+      },
+      {
+        title: "Shopping Journey",
+        text: "Focused on creating a clearer path between discovering products, understanding customization options, and moving into the design experience.",
+      },
+      {
+        title: "Collaborative Design",
+        text: "Worked within a shared design and development process, contributing to specific pages and functionality while maintaining consistency with the wider website experience.",
+      },
+    ],
     tools: ["Figma", "WordPress", "Elementor", "WooCommerce"],
     accent: "#000000",
   },
