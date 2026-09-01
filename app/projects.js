@@ -247,9 +247,32 @@ export const projects = [
     liveUrl: "https://themovebetterproject.com/",
     summary:
       "The Move Better Project is a custom performance apparel company that creates apparel for gyms, teams, events, and fitness communities. The project involved redesigning its website to better communicate the brand, showcase its custom apparel capabilities, present its design-to-delivery process, and provide a clearer e-commerce experience. I also designed and integrated EMOM, a monthly tee subscription offering developed as part of the TMBP brand.",
+    challenge:
+      "The existing website needed a clearer way to communicate TMBP's custom apparel offering and guide visitors through the journey from discovering the brand to understanding the custom apparel process and exploring products. The redesign also needed to accommodate the EMOM subscription experience as a new part of the brand.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
       "Contributed to the website redesign through UI/UX design and implementation across the site, including responsive page layouts, content presentation, e-commerce experiences, and the design and integration of the EMOM subscription experience.",
+    decisions: [
+      {
+        title: "Brand & Content Structure",
+        text: "Restructured and presented the website content to communicate TMBP's custom apparel offering more clearly and make the brand easier to understand.",
+      },
+      {
+        title: "Design-to-Delivery Experience",
+        text: "Presented the custom apparel process in a clear and structured way so visitors could better understand how TMBP takes a project from initial design through to delivery.",
+      },
+      {
+        title: "E-commerce Experience",
+        text: "Improved the presentation and structure of the e-commerce experience to make products easier to browse and understand.",
+      },
+      {
+        title: "EMOM Subscription Experience",
+        text: "Designed and integrated EMOM as a dedicated monthly tee subscription experience, creating a clear journey for users to understand the offering and subscribe.",
+      },
+    ],
+    outcome:
+      "Delivered a redesigned, responsive website that better communicates TMBP's custom performance apparel offering, supports its e-commerce experience, and integrates the EMOM subscription into the overall brand experience.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
     accent: "#000000",
   },
