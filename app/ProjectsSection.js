@@ -299,7 +299,9 @@ export default function ProjectsSection() {
 
                   {active.decisions?.length ? (
                     <section className="project-modal-section">
-                      <h4 className="project-modal-heading">Key Design & UX Decisions</h4>
+                      <h4 className="project-modal-heading">
+                        {active.decisionsHeading || "Key Design & UX Decisions"}
+                      </h4>
                       <div className="project-modal-decisions">
                         {active.decisions.map((decision) => (
                           <div key={decision.title} className="project-modal-decision">

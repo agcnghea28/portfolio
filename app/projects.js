@@ -206,10 +206,26 @@ export const projects = [
       "https://www.figma.com/design/df3pNg9g7UmLJv45DacBr6/Work-Projects-3?node-id=5-77&t=WDR4y7zsfdn6tLfN-1",
     liveUrl: "https://p1peline.io/",
     summary:
-      "P1peline is a technology and digital solutions company that helps businesses streamline operations and unlock growth through scalable platforms, custom software, and integrated services. The website presents P1peline's capabilities, services, and approach to potential clients.",
+      "P1peline is a technology and digital solutions company that helps businesses streamline operations and support growth through scalable platforms, custom software, and integrated services. The website presents P1peline's capabilities, services, and approach to potential clients.",
     role: "UI/UX Designer",
+    roleInDetails: true,
     contribution:
-      "Created and refined website mockups and page layouts as part of the collaborative UI/UX design process.",
+      "Created and refined website mockups and page layouts as part of the collaborative UI/UX design process. My work focused on exploring page structures, refining layouts, and developing UI directions in Figma based on the project's requirements.",
+    decisionsHeading: "Key Design & UX Focus",
+    decisions: [
+      {
+        title: "Page Structure",
+        text: "Explored and refined page layouts to create a clear structure for presenting P1peline's services and capabilities.",
+      },
+      {
+        title: "UI Direction",
+        text: "Developed and refined interface designs in Figma, focusing on visual hierarchy, consistency, and clear presentation of information.",
+      },
+      {
+        title: "Collaborative Design",
+        text: "Worked as part of a collaborative UI/UX process, contributing mockups and design refinements alongside the wider project team.",
+      },
+    ],
     tools: ["Figma", "WordPress", "Elementor"],
     accent: "#000000",
   },
