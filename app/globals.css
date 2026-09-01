@@ -2699,6 +2699,21 @@ a {
   color: var(--ink-soft);
 }
 
+.project-modal-decisions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-modal-decision-title {
+  margin: 0 0 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--white);
+}
+
 .project-modal-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;

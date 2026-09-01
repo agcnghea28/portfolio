@@ -279,10 +279,17 @@ export default function ProjectsSection() {
 
                   <div className="project-modal-divider" role="separator" />
 
+                  {active.challenge ? (
+                    <section className="project-modal-section">
+                      <h4 className="project-modal-heading">The Challenge</h4>
+                      <p className="project-modal-summary">{active.challenge}</p>
+                    </section>
+                  ) : null}
+
                   <section className="project-modal-section">
                     <h4 className="project-modal-heading">My Contribution</h4>
                     <p className="project-modal-summary">{active.contribution}</p>
-                    {active.role ? (
+                    {active.role && !active.roleInDetails ? (
                       <div className="project-modal-role-block">
                         <p className="project-modal-label">Role</p>
                         <p className="project-modal-value">{active.role}</p>
@@ -290,9 +297,36 @@ export default function ProjectsSection() {
                     ) : null}
                   </section>
 
+                  {active.decisions?.length ? (
+                    <section className="project-modal-section">
+                      <h4 className="project-modal-heading">Key Design & UX Decisions</h4>
+                      <div className="project-modal-decisions">
+                        {active.decisions.map((decision) => (
+                          <div key={decision.title} className="project-modal-decision">
+                            <p className="project-modal-decision-title">{decision.title}</p>
+                            <p className="project-modal-summary">{decision.text}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  ) : null}
+
+                  {active.outcome ? (
+                    <section className="project-modal-section">
+                      <h4 className="project-modal-heading">Outcome</h4>
+                      <p className="project-modal-summary">{active.outcome}</p>
+                    </section>
+                  ) : null}
+
                   <section className="project-modal-section">
                     <h4 className="project-modal-heading">Project Details</h4>
                     <div className="project-modal-meta">
+                      {active.role && active.roleInDetails ? (
+                        <div>
+                          <p className="project-modal-label">Role</p>
+                          <p className="project-modal-value">{active.role}</p>
+                        </div>
+                      ) : null}
                       <div>
                         <p className="project-modal-label">Tools</p>
                         <ul className="project-modal-tools">

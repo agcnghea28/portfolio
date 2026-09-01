@@ -6,7 +6,7 @@ export const projects = [
     title: "Little Chinese Everywhere",
     client: "Yan & Flo (LCE)",
     shared: false,
-    types: ["Travel", "Tourism", "Content & E-commerce"],
+    types: ["Travel", "Tourism", "Content", "E-commerce"],
     cover: "/projects/little-chinese-everywhere.jpg",
     screenshots: [
       {
@@ -18,10 +18,33 @@ export const projects = [
       "https://www.figma.com/design/cFdzqK185z8JCuk4OwVzpO/Work-Projects-2?node-id=0-1&t=03ZXPDeSgjVLA2kP-1",
     liveUrl: "https://littlechineseeverywhere.com/",
     summary:
-      "Little Chinese Everywhere is a travel and storytelling platform that brings LCE journeys to life through an interactive map and engaging stories about the people, places, and cultures they encounter. The website also includes a shop for merchandise and products related to their travels and the devices they use.",
+      "Little Chinese Everywhere is a travel and storytelling platform that brings LCE's journeys to life through an interactive map and engaging stories about the people, places, and cultures they encounter. The website also includes an online shop for merchandise, travel-related products, and devices they use during their journeys.",
+    challenge:
+      "The website needed to bring together travel stories, destinations, interactive content, and e-commerce within one cohesive experience. The challenge was to make a large amount of travel content easy to explore while keeping the experience engaging, visually appealing, and consistent across the website.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Designed and implemented the website experience, including responsive page layouts, content presentation, navigation, interactive components, and e-commerce functionality.",
+      "I designed and implemented the website experience, from responsive page layouts and content structure to navigation, interactive components, and e-commerce functionality. I translated the designs into the final website using WordPress and Elementor, while ensuring the experience worked across different screen sizes.",
+    decisions: [
+      {
+        title: "Interactive Map",
+        text: "Used the map as an important part of the experience, allowing visitors to explore LCE's journeys and discover the places they have visited.",
+      },
+      {
+        title: "Content & Storytelling",
+        text: "Structured travel stories and destination content with clear hierarchy and layouts that make longer-form content easier to explore and read.",
+      },
+      {
+        title: "Navigation & Content Structure",
+        text: "Organized different types of travel content into a consistent structure so visitors can move between destinations, stories, and other sections of the website more easily.",
+      },
+      {
+        title: "E-commerce Integration",
+        text: "Integrated the shop into the overall website experience, allowing merchandise and travel-related products to feel like a natural part of the LCE platform rather than a separate experience.",
+      },
+    ],
+    outcome:
+      "Delivered a responsive travel and storytelling website that brings together LCE's journeys, interactive content, and e-commerce in one cohesive experience.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
     accent: "#000000",
   },
