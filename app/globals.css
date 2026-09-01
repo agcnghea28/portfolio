@@ -3056,14 +3056,14 @@ a {
   width: 48px;
   height: 2px;
   margin: 16px auto 0;
-  background: var(--accent);
+  background: var(--white);
 }
 
 .experience-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid rgba(191, 13, 3, 0.42);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .experience-row {
@@ -3075,12 +3075,12 @@ a {
   column-gap: clamp(20px, 3vw, 40px);
   row-gap: 8px;
   padding: clamp(28px, 4vw, 40px) 0;
-  border-bottom: 1px solid rgba(191, 13, 3, 0.42);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
   transition: background 0.2s ease;
 }
 
 .experience-row:hover {
-  background: rgba(191, 13, 3, 0.08);
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .experience-row:hover .experience-company,
@@ -3106,7 +3106,7 @@ a {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--accent);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .experience-role {

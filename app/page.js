@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--dark experience-section" id="experience">
+      <section className="section section--accent experience-section" id="experience">
         <SectionAtmosphere label="Experience" mark="left" />
         <div className="wrap">
           <Reveal>
