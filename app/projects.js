@@ -112,10 +112,33 @@ export const projects = [
       "https://www.figma.com/design/R5WYwJhFqZQjWZvZoHUNmC/Work-Projects-1?node-id=0-1&t=s5c8IbHcQ9bqfFF6-1",
     liveUrl: "https://www.lrfsport.com.au/",
     summary:
-      "This project is designed and built six category-specific landing pages for LRF's teamwear promotions, using a consistent, reusable layout while adapting imagery, product selections, and content for each sporting category.",
+      "This project involved designing and building six category-specific landing pages for LRF's teamwear promotions. The pages use a consistent and reusable layout while adapting the imagery, product selections, and content for each sporting category.",
+    challenge:
+      "The landing pages needed to promote different sportswear categories while maintaining a consistent brand and user experience across all campaigns. The challenge was to create a reusable structure that could be adapted to different sports, products, imagery, and promotional content without making each page feel repetitive.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Designed and built six category-specific landing pages using a reusable layout structure, adapting imagery, product selections, and content for each campaign.",
+      "I designed and built six category-specific landing pages using a reusable layout structure. I adapted the imagery, product selections, content, and page sections for each campaign while maintaining consistency across the overall experience.",
+    decisions: [
+      {
+        title: "Reusable Layout System",
+        text: "Created a consistent page structure that could be reused across multiple campaign pages while allowing individual sections and content to be adapted for each sporting category.",
+      },
+      {
+        title: "Category-Specific Content",
+        text: "Adapted imagery, products, messaging, and content to make each landing page relevant to its specific sport and target audience.",
+      },
+      {
+        title: "Product Presentation",
+        text: "Structured product selections and promotional content to make the featured teamwear easy to browse and understand.",
+      },
+      {
+        title: "Campaign-Focused Experience",
+        text: "Designed the pages around the promotional goals of each campaign, keeping the content focused and making it easy for users to explore the featured products.",
+      },
+    ],
+    outcome:
+      "Delivered six responsive promotional landing pages using a consistent and reusable structure, providing LRF with a scalable approach for presenting different teamwear categories and campaigns.",
     tools: ["The Web Console", "Figma"],
     accent: "#000000",
   },
