@@ -14,8 +14,7 @@ export default function RecommendationSection() {
             alt="Portrait of Daniel Shultz"
             fill
             sizes="(max-width: 768px) 360px, 50vw"
-            quality={100}
-            unoptimized
+            quality={92}
           />
         </div>
 
