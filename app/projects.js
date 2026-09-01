@@ -428,13 +428,35 @@ export const projects = [
         alt: "Huayun Luxury Trains — final project collage",
       },
     ],
-    figmaUrl: "",
     liveUrl: "https://huayunluxurytrains.com/",
     summary:
       "Huayun Luxury Trains is a luxury rail travel website showcasing premium train journeys across China, including curated itineraries, train accommodations, destinations, excursions, and onboard experiences. The website provides travelers with information about available journeys and packages while guiding them through the inquiry and booking process.",
+    challenge:
+      "The website needed to present detailed information about luxury train journeys, itineraries, destinations, accommodations, and travel packages in a clear and engaging way. The experience also needed to help users move from exploring different journeys to understanding the available packages and taking the next step toward an inquiry or booking.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
       "Designed and implemented the main website sections, navigation menu, and reusable archive templates directly in WordPress using Elementor, including WooCommerce-powered tour and package presentation. Most of the UI/UX work was designed and implemented directly within the CMS rather than created as Figma mockups.",
+    decisions: [
+      {
+        title: "Journey & Package Discovery",
+        text: "Structured tour and package content to help travelers explore different luxury rail journeys, compare offerings, and understand what each experience includes.",
+      },
+      {
+        title: "Information Hierarchy",
+        text: "Organized detailed itinerary, accommodation, destination, excursion, and onboard experience information into clear sections to make the content easier to browse and understand.",
+      },
+      {
+        title: "Navigation",
+        text: "Designed and implemented the navigation structure to help users move between journeys, destinations, packages, and other important areas of the website.",
+      },
+      {
+        title: "Reusable Templates",
+        text: "Created reusable archive templates for consistent presentation across different tours and packages while allowing the website to support additional offerings.",
+      },
+    ],
+    outcome:
+      "Delivered a responsive luxury travel website that presents Huayun's rail journeys and packages in a structured and engaging way, with reusable CMS templates supporting the presentation of its tour and e-commerce content.",
     tools: ["WordPress", "Elementor", "WooCommerce"],
     accent: "#000000",
   },
