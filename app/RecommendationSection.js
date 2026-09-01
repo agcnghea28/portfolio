@@ -7,18 +7,19 @@ export default function RecommendationSection() {
         What My Former Manager Says
       </h2>
 
-      <figure className="recommendation-card">
+      <figure className="recommendation-layout">
         <div className="recommendation-photo">
           <Image
             src="/recommendation/daniel-shultz.jpg"
             alt="Portrait of Daniel Shultz"
             fill
-            sizes="(max-width: 768px) 220px, 280px"
-            quality={90}
+            sizes="220px"
+            quality={100}
+            unoptimized
           />
         </div>
 
-        <div className="recommendation-copy">
+        <div className="recommendation-card">
           <blockquote className="recommendation-quote">
             <p>
               I highly recommend Ghea Agcang for UI/UX, WordPress, Elementor, and
@@ -36,9 +37,7 @@ export default function RecommendationSection() {
               content and assets, while still checking the final work herself. She
               communicated clearly, kept Asana updated, adapted well to change, and
               was a dependable, well-liked teammate who was consistently reliable
-              and available. Her position was eliminated only because of a
-              company-wide reduction in force, not because of her performance. I
-              would gladly hire her again.
+              and available. I would gladly hire her again.
             </p>
           </blockquote>
 
