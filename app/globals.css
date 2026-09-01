@@ -3061,17 +3061,16 @@ a {
 
 .recommendation-layout {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-columns: minmax(240px, 0.38fr) minmax(0, 1fr);
   gap: clamp(28px, 4.5vw, 48px);
-  align-items: start;
+  align-items: stretch;
   margin: 0;
 }
 
 .recommendation-photo {
   position: relative;
-  width: 220px;
-  max-width: 100%;
-  aspect-ratio: 1;
+  width: 100%;
+  min-height: 100%;
   overflow: hidden;
   background: transparent;
 }
@@ -3184,7 +3183,9 @@ a {
   }
 
   .recommendation-photo {
-    width: min(220px, 100%);
+    width: min(280px, 100%);
+    min-height: 280px;
+    aspect-ratio: 1;
   }
 }
 
