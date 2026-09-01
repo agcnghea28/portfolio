@@ -3185,17 +3185,36 @@ a {
 }
 
 .recommendation-quote {
+  position: relative;
+  overflow: hidden;
   flex: 1 1 auto;
   margin: 0;
   padding: clamp(24px, 3.5vw, 36px);
+  background: var(--accent);
+}
+
+.recommendation-mark {
+  position: absolute;
+  top: -0.08em;
+  right: 0.04em;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-size: clamp(140px, 16vw, 220px);
+  font-weight: 700;
+  line-height: 0.7;
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  user-select: none;
 }
 
 .recommendation-quote p {
+  position: relative;
+  z-index: 1;
   margin: 0 0 1em;
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.7;
-  color: #333333;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .recommendation-quote p:last-child {
@@ -3210,7 +3229,7 @@ a {
   flex: 0 0 auto;
   margin: 0;
   padding: clamp(20px, 3vw, 28px) clamp(24px, 3.5vw, 36px);
-  background: var(--accent);
+  background: var(--white);
 }
 
 .recommendation-person {
@@ -3222,7 +3241,7 @@ a {
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--ink);
 }
 
 .recommendation-role {
@@ -3230,7 +3249,7 @@ a {
   font-family: var(--font-body);
   font-size: 13px;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
 }
 
 .recommendation-linkedin {
@@ -3240,9 +3259,9 @@ a {
   justify-content: center;
   min-height: 36px;
   padding: 6px 12px;
-  border: 1.5px solid var(--white);
+  border: 1.5px solid var(--ink);
   background: transparent;
-  color: var(--white);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
@@ -3257,9 +3276,9 @@ a {
 
 .recommendation-linkedin:hover,
 .recommendation-linkedin:focus-visible {
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--accent);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
 }
 
 .recommendation-linkedin:focus-visible {

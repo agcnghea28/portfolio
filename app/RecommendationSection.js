@@ -20,6 +20,9 @@ export default function RecommendationSection() {
 
         <div className="recommendation-card">
           <blockquote className="recommendation-quote">
+            <span className="recommendation-mark" aria-hidden="true">
+              &ldquo;
+            </span>
             <p>
               I highly recommend Ghea Agcang for UI/UX, WordPress, Elementor, and
               front-end website work. At P1peline, our fast-moving business
