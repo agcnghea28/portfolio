@@ -159,10 +159,33 @@ export const projects = [
       "https://www.figma.com/design/df3pNg9g7UmLJv45DacBr6/Work-Projects-3?node-id=6-2756&t=WDR4y7zsfdn6tLfN-1",
     liveUrl: "https://teamwear-factory.com/",
     summary:
-      "Teamwear Factory is an e-commerce website for custom sports apparel and uniforms, allowing teams to browse products, explore categories, and create personalized teamwear through a custom uniform design experience.",
+      "Teamwear Factory is an e-commerce website for custom sports apparel and uniforms. The website allows teams to browse products and categories while providing a custom uniform design experience through an integrated third-party Kit Builder.",
+    challenge:
+      "The website needed to support both traditional e-commerce browsing and a more interactive customization experience. The challenge was to create a clear product discovery and shopping experience while connecting users to the third-party Kit Builder as part of the overall customer journey.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Designed and built the website end-to-end, including responsive layouts, product and category pages, navigation, and the integration of a third-party Kit Builder.",
+      "I designed and built the website end-to-end, including responsive layouts, navigation, product and category pages, and the integration of the third-party Kit Builder. I worked across both the UI/UX design and website implementation to create a consistent experience from product discovery through customization.",
+    decisions: [
+      {
+        title: "Product Discovery",
+        text: "Structured product categories and pages to help teams browse and find relevant sportswear and uniform options more easily.",
+      },
+      {
+        title: "Customization Experience",
+        text: "Integrated the third-party Kit Builder into the website experience so users could move from exploring teamwear to creating their own customized designs.",
+      },
+      {
+        title: "E-commerce Experience",
+        text: "Designed the product and category experience around clear navigation, product presentation, and an easy path toward customization and purchase.",
+      },
+      {
+        title: "Consistent User Experience",
+        text: "Maintained consistent layouts, UI patterns, and responsive behavior across the website while connecting the main e-commerce experience with the external customization tool.",
+      },
+    ],
+    outcome:
+      "Delivered a responsive e-commerce website that combines product discovery, online shopping, and custom teamwear design through an integrated third-party Kit Builder.",
     tools: ["Figma", "WordPress", "Elementor", "WooCommerce"],
     accent: "#000000",
   },
