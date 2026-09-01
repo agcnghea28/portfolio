@@ -48,23 +48,11 @@ function IconKanban() {
   );
 }
 
-function IconApps() {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-      <rect x="10" y="10" width="11" height="11" rx="2" stroke="currentColor" strokeWidth="2.2" />
-      <rect x="27" y="10" width="11" height="11" rx="2" stroke="currentColor" strokeWidth="2.2" />
-      <rect x="10" y="27" width="11" height="11" rx="2" stroke="currentColor" strokeWidth="2.2" />
-      <rect x="27" y="27" width="11" height="11" rx="2" stroke="currentColor" strokeWidth="2.2" />
-    </svg>
-  );
-}
-
 const icons = {
   "ui-ux-design": IconLayers,
   "ai-tools": IconSpark,
   "web-dev-automation": IconWindow,
   "project-management": IconKanban,
-  productivity: IconApps,
 };
 
 export default function SkillIcon({ id }) {

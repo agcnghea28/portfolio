@@ -2950,6 +2950,10 @@ a {
   background: var(--white);
 }
 
+.skill-chip-group + .skill-chip-group {
+  margin-top: 22px;
+}
+
 .skill-board-icon {
   display: grid;
   place-items: center;

@@ -87,13 +87,25 @@ export default function SkillsAccordion() {
           </div>
 
           <div className="skill-board-bottom">
-            <p className="skill-tools-label">Tools</p>
-            <div className="skill-chips" aria-label={`Tools used for ${active.title}`}>
-              {active.tools.map((tool) => (
-                <span key={tool} className="skill-chip">
-                  {tool}
-                </span>
-              ))}
+            <div className="skill-chip-group">
+              <p className="skill-tools-label">Core Skills</p>
+              <div className="skill-chips" aria-label={`Core skills for ${active.title}`}>
+                {active.coreSkills.map((skill) => (
+                  <span key={skill} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="skill-chip-group">
+              <p className="skill-tools-label">Tools</p>
+              <div className="skill-chips" aria-label={`Tools used for ${active.title}`}>
+                {active.tools.map((tool) => (
+                  <span key={tool} className="skill-chip">
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
