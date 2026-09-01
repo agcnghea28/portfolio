@@ -3044,7 +3044,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  max-width: 52rem;
+  max-width: 68rem;
 }
 
 .recommendation-heading {
@@ -3052,11 +3052,31 @@ a {
 }
 
 .recommendation-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  align-items: start;
   margin: 0;
   padding: clamp(24px, 3.5vw, 36px);
   border: 1.5px solid var(--white);
   background: var(--white);
   color: var(--ink);
+}
+
+.recommendation-photo {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #ececec;
+}
+
+.recommendation-photo img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.recommendation-copy {
+  min-width: 0;
 }
 
 .recommendation-quote {
@@ -3137,6 +3157,16 @@ a {
 .recommendation-linkedin:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .recommendation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-photo {
+    width: min(220px, 100%);
+  }
 }
 
 @media (max-width: 640px) {
