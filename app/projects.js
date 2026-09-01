@@ -373,7 +373,7 @@ export const projects = [
     title: "Sphere Sport",
     client: "Sam Clay",
     shared: false,
-    types: ["B2B", "Sportswear Manufacturing", "E-commerce", "Website Redesign", "Templates", "Pages"],
+    types: ["B2B", "Sportswear Manufacturing", "E-commerce", "Website Redesign", "Templates & Pages"],
     cover: "/projects/sphere-sport.jpg",
     screenshots: [
       {
@@ -386,9 +386,32 @@ export const projects = [
     liveUrl: "https://sphere-sports.com/",
     summary:
       "Sphere Sport is a custom sportswear manufacturer specializing in sports uniforms and apparel for teamwear brands and organizations. The website redesign focused on improving the presentation of its products, manufacturing capabilities, services, and sports-specific categories while creating a clearer and more structured browsing experience.",
+    challenge:
+      "The website needed to present a wide range of sportswear products, manufacturing capabilities, services, and sports-specific categories in a way that was easy for potential clients to navigate. The redesign focused on improving the structure of the website and making products and services easier to discover.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Redesigned and implemented key website pages, the mega menu, and reusable archive templates directly in WordPress using Elementor.",
+      "Redesigned and implemented key website pages, the mega menu, and reusable archive templates directly in WordPress using Elementor. My work focused on improving product presentation, navigation, content structure, and consistency across the different sports and product categories.",
+    decisions: [
+      {
+        title: "Sports-Specific Navigation",
+        text: "Structured the website navigation around different sports and product categories to help users quickly find relevant teamwear and apparel.",
+      },
+      {
+        title: "Product Discovery",
+        text: "Improved the presentation and organization of sportswear products to make it easier for potential clients to browse and explore different offerings.",
+      },
+      {
+        title: "Mega Menu",
+        text: "Designed and implemented a structured mega menu to organize the website's sports, products, services, and other key content.",
+      },
+      {
+        title: "Reusable Archive Templates",
+        text: "Created reusable archive templates to maintain consistent layouts across different sports and product categories while making the website easier to scale and maintain.",
+      },
+    ],
+    outcome:
+      "Delivered a redesigned and structured B2B sportswear website with improved navigation, product discovery, and reusable page templates across its different sports and product categories.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
     accent: "#000000",
   },
