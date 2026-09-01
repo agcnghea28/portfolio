@@ -326,7 +326,7 @@ export const projects = [
     title: "Sphere Resources",
     client: "Sam Clay",
     shared: false,
-    types: ["B2B", "Manufacturing & Procurement", "Website Redesign", "Templates", "Pages"],
+    types: ["B2B", "Manufacturing & Procurement", "Website Redesign", "Templates & Pages"],
     cover: "/projects/sphere-resources.jpg",
     screenshots: [
       {
@@ -339,9 +339,32 @@ export const projects = [
     liveUrl: "https://sphere-resources.com/",
     summary:
       "Sphere Resources is a B2B manufacturing and procurement partner that helps businesses develop, source, and deliver custom products through its network of manufacturing partners in Asia. The project focused on redesigning key areas of the website to improve its structure, navigation, content presentation, and product discovery experience.",
+    challenge:
+      "The website contained a range of services, products, and business information that needed to be easier for potential clients to navigate and understand. The redesign focused on creating a clearer structure for the website while making product and category content easier to discover.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Redesigned and implemented key website pages, the mega menu, and reusable archive templates directly in WordPress using Elementor.",
+      "Redesigned and implemented key website pages, the mega menu, and reusable archive templates directly in WordPress using Elementor. My work focused on improving the overall page structure, navigation, content presentation, and consistency across different types of website content.",
+    decisions: [
+      {
+        title: "Information Architecture & Navigation",
+        text: "Improved the website structure and navigation to help users find relevant services, products, and information more easily.",
+      },
+      {
+        title: "Mega Menu",
+        text: "Designed and implemented a structured mega menu to organize a larger amount of website content while making important sections easier to access.",
+      },
+      {
+        title: "Reusable Archive Templates",
+        text: "Created reusable archive templates for consistent presentation across different product and content categories, reducing the need to design each page individually.",
+      },
+      {
+        title: "Product Discovery",
+        text: "Improved the structure and presentation of product and category content to make it easier for potential clients to browse and discover relevant offerings.",
+      },
+    ],
+    outcome:
+      "Delivered redesigned key website pages, a structured mega menu, and reusable archive templates that created a more consistent and organized experience across the Sphere Resources website.",
     tools: ["Figma", "Elementor", "WordPress", "WooCommerce"],
     accent: "#000000",
   },
