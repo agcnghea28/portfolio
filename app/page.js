@@ -1,6 +1,7 @@
 import AboutSection from "./AboutSection";
 import ContactSection from "./ContactSection";
 import RecommendationSection from "./RecommendationSection";
+import ExperienceSection from "./ExperienceSection";
 import HeroSection from "./HeroSection";
 import ProcessSection from "./ProcessSection";
 import ProjectsSection from "./ProjectsSection";
@@ -62,6 +63,15 @@ export default function Home() {
           </Reveal>
           <Reveal>
             <SkillsAccordion />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--dark experience-section" id="experience">
+        <SectionAtmosphere label="Experience" mark="left" />
+        <div className="wrap">
+          <Reveal>
+            <ExperienceSection />
           </Reveal>
         </div>
       </section>

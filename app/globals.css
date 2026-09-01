@@ -3039,6 +3039,112 @@ a {
   border-color: var(--accent);
 }
 
+/* --- Experience --- */
+.experience-head {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.experience-heading {
+  text-align: center;
+}
+
+.experience-heading::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: var(--accent);
+}
+
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(191, 13, 3, 0.42);
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) minmax(0, 1.45fr);
+  grid-template-areas:
+    "company role desc"
+    "dates role desc";
+  column-gap: clamp(20px, 3vw, 40px);
+  row-gap: 8px;
+  padding: clamp(28px, 4vw, 40px) 0;
+  border-bottom: 1px solid rgba(191, 13, 3, 0.42);
+  transition: background 0.2s ease;
+}
+
+.experience-row:hover {
+  background: rgba(191, 13, 3, 0.08);
+}
+
+.experience-row:hover .experience-company,
+.experience-row:hover .experience-role {
+  color: var(--white);
+}
+
+.experience-company {
+  grid-area: company;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.experience-dates {
+  grid-area: dates;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.experience-role {
+  grid-area: role;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.experience-desc {
+  grid-area: desc;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--section-ink-soft);
+}
+
+@media (max-width: 768px) {
+  .experience-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "company"
+      "role"
+      "dates"
+      "desc";
+    row-gap: 6px;
+    padding: 28px 0;
+  }
+
+  .experience-desc {
+    margin-top: 8px;
+  }
+}
+
 /* --- Recommendation --- */
 .section.recommendation-section {
   background-color: var(--accent);
