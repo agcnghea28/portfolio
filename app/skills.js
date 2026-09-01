@@ -49,7 +49,7 @@ export const skills = [
     number: "03",
     title: "AI-Assisted Workflows",
     summary:
-      "I use AI to speed up my workflow from design to code, helping with site building, troubleshooting, research, and iterations. I still rely on my own design and development judgment when making final decisions.",
+      "I use AI to speed up my workflow, from design to code, to help with site building, troubleshooting, and iterations. I also use AI-assisted development approaches such as vibe coding when appropriate, while still relying on my own design and development judgment for the final decisions.",
     coreSkills: [
       "Design Assistance",
       "Design-to-Code",
