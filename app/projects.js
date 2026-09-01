@@ -66,9 +66,32 @@ export const projects = [
     liveUrl: "https://www.turbotender.com/",
     summary:
       "TurboTender is a B2B website for an AI-powered government procurement platform. The website presents the platform's capabilities, procurement workflows, and value proposition while helping establish trust with government procurement teams.",
+    challenge:
+      "TurboTender needed to communicate a complex AI-powered procurement platform to a professional government audience. The challenge was to present technical capabilities, procurement workflows, and product benefits in a way that was clear and easy to understand without overwhelming users with too much information.",
     role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
     contribution:
-      "Designed and implemented the website experience for a complex B2B/GovTech product, translating its procurement workflows, AI capabilities, and value proposition into clear, user-friendly pages.",
+      "I designed and implemented the website experience for the TurboTender platform, translating its procurement workflows, AI capabilities, and value proposition into clear and user-friendly pages. My work covered the UI/UX design, responsive layouts, content presentation, navigation, and implementation of the final website using WordPress and Elementor.",
+    decisions: [
+      {
+        title: "Simplifying Complex Information",
+        text: "Structured complex product capabilities and procurement concepts into clear sections with strong visual hierarchy, making the information easier for users to scan and understand.",
+      },
+      {
+        title: "Procurement Workflow",
+        text: "Presented the procurement process in a structured way to help users understand how TurboTender supports different stages of government procurement.",
+      },
+      {
+        title: "Trust & Credibility",
+        text: "Focused on a professional and consistent visual system that supports the credibility of the platform and communicates its value to government procurement teams.",
+      },
+      {
+        title: "Content Hierarchy",
+        text: "Organized the website content around the platform's key capabilities, benefits, and use cases so users can quickly understand what TurboTender offers and why it matters.",
+      },
+    ],
+    outcome:
+      "Delivered a responsive B2B website that clearly communicates TurboTender's AI-powered procurement capabilities and workflows while providing a professional and trustworthy experience for its target audience.",
     tools: ["Figma", "WordPress", "Elementor"],
     accent: "#000000",
   },
