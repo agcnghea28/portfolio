@@ -8,7 +8,7 @@ export const processSteps = [
     title: "Research & planning",
     points: [
       "Understand the client's goals, target users, requirements, and constraints.",
-      "Review competitors and gather inspiration to identify opportunities and establish direction.",
+      "Review competitors and gather inspiration to identify opportunities and guide the design direction.",
     ],
   },
   {
@@ -38,8 +38,8 @@ export const processSteps = [
     points: [
       "Translate the design into the website builder or CMS.",
       "Build reusable components and templates while maintaining consistency with the design.",
-      "For projects that don't require a separate Figma phase, make UI/UX decisions directly within the website builder or CMS.",
-      "Optimize layouts for different screen sizes and fix implementation issues.",
+      "For projects without a separate Figma phase, make UI/UX decisions directly within the website builder or CMS.",
+      "Optimize layouts for different screen sizes and resolve implementation issues.",
     ],
   },
   {
@@ -58,7 +58,7 @@ export const processSteps = [
     title: "Launch & iterate",
     points: [
       "Prepare the website for launch and provide client handoff documentation when needed.",
-      "Monitor the site after launch and address issues or improvements as necessary.",
+      "Address post-launch issues and make improvements as needed.",
     ],
   },
 ];

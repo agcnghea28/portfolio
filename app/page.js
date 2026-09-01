@@ -1,5 +1,6 @@
 import AboutSection from "./AboutSection";
 import ContactSection from "./ContactSection";
+import RecommendationSection from "./RecommendationSection";
 import HeroSection from "./HeroSection";
 import ProcessSection from "./ProcessSection";
 import ProjectsSection from "./ProjectsSection";
@@ -61,6 +62,15 @@ export default function Home() {
           </Reveal>
           <Reveal>
             <SkillsAccordion />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section--dark" id="recommendation">
+        <SectionAtmosphere label="Recommend" mark="left" />
+        <div className="wrap">
+          <Reveal>
+            <RecommendationSection />
           </Reveal>
         </div>
       </section>

@@ -1494,7 +1494,8 @@ a {
 .tool-pill,
 .project-card,
 .project-folder-body,
-.skill-board {
+.skill-board,
+.recommendation-card {
   --ink: #000000;
   --ink-soft: #555555;
   --line: rgba(0, 0, 0, 0.14);
@@ -3036,6 +3037,117 @@ a {
   background: var(--accent);
   color: var(--white);
   border-color: var(--accent);
+}
+
+/* --- Recommendation --- */
+.recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 52rem;
+}
+
+.recommendation-heading {
+  max-width: 14ch;
+}
+
+.recommendation-card {
+  margin: 0;
+  padding: clamp(24px, 3.5vw, 36px);
+  border: 1.5px solid var(--white);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.recommendation-quote {
+  margin: 0;
+}
+
+.recommendation-quote p {
+  margin: 0 0 1em;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.recommendation-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.recommendation-byline {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.recommendation-person {
+  min-width: 0;
+}
+
+.recommendation-name {
+  margin: 0 0 4px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.recommendation-role {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.recommendation-linkedin {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.recommendation-linkedin:hover,
+.recommendation-linkedin:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.recommendation-linkedin:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .recommendation-heading {
+    max-width: none;
+  }
+
+  .recommendation-byline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* --- Contact --- */
