@@ -3061,7 +3061,7 @@ a {
 
 .recommendation-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 0.38fr) minmax(0, 1fr);
+  grid-template-columns: minmax(340px, 0.5fr) minmax(0, 1fr);
   gap: clamp(28px, 4.5vw, 48px);
   align-items: stretch;
   margin: 0;
@@ -3183,9 +3183,9 @@ a {
   }
 
   .recommendation-photo {
-    width: min(280px, 100%);
-    min-height: 280px;
-    aspect-ratio: 1;
+    width: min(360px, 100%);
+    min-height: 320px;
+    aspect-ratio: 4 / 5;
   }
 }
 

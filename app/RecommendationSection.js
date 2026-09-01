@@ -13,7 +13,7 @@ export default function RecommendationSection() {
             src="/recommendation/daniel-shultz.jpg"
             alt="Portrait of Daniel Shultz"
             fill
-            sizes="(max-width: 768px) 240px, 32vw"
+            sizes="(max-width: 768px) 360px, 50vw"
             quality={100}
             unoptimized
           />
