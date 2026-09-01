@@ -3136,14 +3136,6 @@ a {
 }
 
 /* --- Recommendation --- */
-.section.recommendation-section {
-  background-color: var(--accent);
-  background-image: linear-gradient(var(--black), var(--black));
-  background-position: top;
-  background-size: 100% 58%;
-  background-repeat: no-repeat;
-}
-
 .recommendation {
   display: flex;
   flex-direction: column;
@@ -3270,10 +3262,6 @@ a {
 }
 
 @media (max-width: 768px) {
-  .section.recommendation-section {
-    background-size: 100% 46%;
-  }
-
   .recommendation-layout {
     grid-template-columns: 1fr;
   }
