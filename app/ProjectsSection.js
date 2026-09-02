@@ -373,8 +373,9 @@ export default function ProjectsSection() {
                   ) : null}
 
                   <p className="project-modal-disclaimer">
-                    The live site may differ from the version shown in the mock-up. Some designs
-                    have since been updated or modified by the client after my involvement.
+                    The live site may differ from the version shown in the mock-up, as the
+                    project has since migrated to a new platform. Please refer to the Figma
+                    file for the design as I delivered it.
                   </p>
                 </div>
                 </div>
