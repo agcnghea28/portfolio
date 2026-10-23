@@ -3144,7 +3144,7 @@ a {
 }
 
 .recommendation-heading {
-  max-width: 14ch;
+  max-width: 16ch;
 }
 
 .recommendation-layout {
@@ -3165,7 +3165,7 @@ a {
 
 .recommendation-photo img {
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center;
 }
 
 .recommendation-card {

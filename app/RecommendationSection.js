@@ -4,14 +4,14 @@ export default function RecommendationSection() {
   return (
     <div className="recommendation">
       <h2 className="section-title recommendation-heading">
-        What My Former Manager Says
+        What It&rsquo;s Like Working With Me
       </h2>
 
       <figure className="recommendation-layout">
         <div className="recommendation-photo">
           <Image
-            src="/recommendation/daniel-shultz.jpg"
-            alt="Portrait of Daniel Shultz"
+            src="/recommendation/anonymous.jpg"
+            alt=""
             fill
             sizes="(max-width: 768px) 420px, 62vw"
             quality={92}
@@ -39,7 +39,9 @@ export default function RecommendationSection() {
               content and assets, while still checking the final work herself. She
               communicated clearly, kept Asana updated, adapted well to change, and
               was a dependable, well-liked teammate who was consistently reliable
-              and available. I would gladly hire her again.
+              and available. Her position was eliminated only because of a
+              company-wide reduction in force, not because of her performance. I
+              would gladly hire her again.
             </p>
           </blockquote>
 
