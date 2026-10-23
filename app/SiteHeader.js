@@ -4,14 +4,9 @@ import { useEffect, useState } from "react";
 import { scrollToSection } from "./scrollToSection";
 
 const links = [
-  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#tools", label: "Tools" },
   { href: "#process", label: "Process" },
   { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#recommendation", label: "Recommendation" },
   { href: "#contact", label: "Contact" },
 ];
 
