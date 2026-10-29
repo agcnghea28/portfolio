@@ -10,7 +10,7 @@ export default function RecommendationSection() {
       <figure className="recommendation-layout">
         <div className="recommendation-photo">
           <Image
-            src="/recommendation/anonymous.jpg"
+            src="/recommendation/anonymous-silhouette.jpg"
             alt=""
             fill
             sizes="(max-width: 768px) 420px, 62vw"

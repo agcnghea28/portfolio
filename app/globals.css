@@ -3160,12 +3160,14 @@ a {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background: transparent;
+  background: var(--white);
 }
 
 .recommendation-photo img {
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: scale(1.7);
+  transform-origin: center bottom;
 }
 
 .recommendation-card {
