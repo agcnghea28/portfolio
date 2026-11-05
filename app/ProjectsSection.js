@@ -337,14 +337,22 @@ export default function ProjectsSection() {
                           ))}
                         </ul>
                       </div>
-                      <div>
-                        <p className="project-modal-label">Client</p>
-                        <p className="project-modal-value">{active.client}</p>
-                      </div>
+                      {active.client ? (
+                        <div>
+                          <p className="project-modal-label">Client</p>
+                          <p className="project-modal-value">{active.client}</p>
+                        </div>
+                      ) : null}
+                      {active.projectType ? (
+                        <div>
+                          <p className="project-modal-label">Project Type</p>
+                          <p className="project-modal-value">{active.projectType}</p>
+                        </div>
+                      ) : null}
                     </div>
                   </section>
 
-                  {(active.figmaUrl || active.liveUrl) ? (
+                  {(active.figmaUrl || active.liveUrl || active.oldSiteUrl) ? (
                     <section className="project-modal-section">
                       <h4 className="project-modal-heading">Links</h4>
                       <div className="project-modal-links">
@@ -368,15 +376,27 @@ export default function ProjectsSection() {
                             View Website
                           </a>
                         ) : null}
+                        {active.oldSiteUrl ? (
+                          <a
+                            className="project-modal-link-btn"
+                            href={active.oldSiteUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            View Old Site
+                          </a>
+                        ) : null}
                       </div>
                     </section>
                   ) : null}
 
-                  <p className="project-modal-disclaimer">
-                    The live site may differ from the version shown in the mock-up, as the
-                    project has since migrated to a new platform. Please refer to the Figma
-                    file for the design as I delivered it.
-                  </p>
+                  {active.showDisclaimer !== false ? (
+                    <p className="project-modal-disclaimer">
+                      The live site may differ from the version shown in the mock-up, as the
+                      project has since migrated to a new platform. Please refer to the Figma
+                      file for the design as I delivered it.
+                    </p>
+                  ) : null}
                 </div>
                 </div>
               </div>

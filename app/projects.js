@@ -460,4 +460,51 @@ export const projects = [
     tools: ["WordPress", "Elementor", "WooCommerce"],
     accent: "#000000",
   },
+  {
+    id: "marci-metzger",
+    title: "MARCI METZGER",
+    shared: false,
+    types: ["Real Estate", "Website Redesign", "UI/UX Design"],
+    cover: "/projects/marci-metzger.jpg",
+    screenshots: [
+      {
+        src: "/projects/marci-metzger.jpg",
+        alt: "MARCI METZGER — redesigned homepage collage",
+      },
+    ],
+    liveUrl: "https://marci-websiteredesign.vercel.app/",
+    oldSiteUrl: "https://marcimetzger.com/",
+    summary:
+      "A homepage redesign for Marci Metzger, a real estate professional based in Pahrump, Nevada. The project focused on creating a more polished and organized website experience while improving content hierarchy, navigation, and overall visual presentation.",
+    challenge:
+      "The original homepage contained valuable information about Marci's experience, services, properties, and local expertise. However, the content presentation and section organization could be improved to create a more cohesive visual experience and make important information easier for visitors to find.",
+    role: "UI/UX Designer & Web Developer",
+    roleInDetails: true,
+    contribution:
+      "I redesigned the homepage from structure and visual direction to implementation. My work included reviewing the existing website, researching design references, reorganizing content, creating the interface, and developing the redesigned homepage into a functional website.",
+    decisions: [
+      {
+        title: "Content Organization",
+        text: "Reorganized the homepage sections to establish a more logical content flow and make information easier to navigate.",
+      },
+      {
+        title: "Visual Hierarchy",
+        text: "Refined typography, spacing, imagery, and layouts to create a more polished and consistent visual experience.",
+      },
+      {
+        title: "Property Search",
+        text: "Positioned the property search functionality below the hero section to make property discovery accessible without overcrowding the main introduction.",
+      },
+      {
+        title: "Section Presentation",
+        text: "Improved the presentation of featured properties, Marci's experience, services, testimonials, and property gallery to create a more cohesive browsing experience.",
+      },
+    ],
+    outcome:
+      "Delivered a redesigned real estate homepage with a more structured layout, refined visual presentation, and improved content organization, bringing the design vision into a functional website.",
+    tools: ["Figma", "Cursor", "Vercel", "GitHub"],
+    projectType: "Website Redesign Assessment",
+    showDisclaimer: false,
+    accent: "#000000",
+  },
 ];
